@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/halatinn97/documentary-central-client2/issues"
   },
-  "homepage": "https://github.com/halatinn97/documentary-central-client2#readme"
+  "homepage": "https://github.com/halatinn97/documentary-central-client2#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
