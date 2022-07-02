@@ -945,26 +945,18 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
+var _mainView = require("./components/main-view/main-view");
 // Import statement to indicate that you need to bundle `./index.scss`
 var _indexScss = require("./index.scss");
 // Main component (will eventually use all the others)
 class DocumentaryCentralApplication extends _reactDefault.default.Component {
     render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-            className: "documentary-central",
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
             __source: {
                 fileName: "src/index.jsx",
-                lineNumber: 11
+                lineNumber: 12
             },
-            __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                __source: {
-                    fileName: "src/index.jsx",
-                    lineNumber: 12
-                },
-                __self: this,
-                children: "Good morning"
-            })
+            __self: this
         }));
     }
 }
@@ -978,7 +970,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElemen
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"9AY5K","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"659dA"}],"8xIwr":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"9AY5K","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"659dA","./components/main-view/main-view":"2zHas"}],"8xIwr":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-runtime.development.js');
 
@@ -25400,6 +25392,297 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"h2td3"}]},["deH6B","jXu13","dLPEP"], "dLPEP", "parcelRequire9723")
+},{"react-refresh/runtime":"h2td3"}],"2zHas":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$35bf = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$35bf.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MainView", ()=>MainView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _documentaryCard = require("../documentary-card/documentary-card");
+var _documentaryView = require("../documentary-view/documentary-view");
+class MainView extends _reactDefault.default.Component {
+    constructor(){
+        super();
+        this.state = {
+            documentaries: [
+                {
+                    "_id": {
+                        "$oid": "62b0c33a77845f0f03ca6df4"
+                    },
+                    "Title": "One Strange Rock",
+                    "Description": "The extraordinary story of Earth and why it is special and uniquely brimming with life among a largely unknown but harsh cosmic arena; astronauts tell the story of Earth through a unique perspective.",
+                    "ReleaseYear": "2018",
+                    "FeaturedPersonality": {
+                        "Name": "Will Smith",
+                        "Birth": "1968",
+                        "Biography": "Williard Christopher Smith, better known by his stage name Will Smith, was born in Philadelphia, United States. He is a renowned comedian, composer, executive producer, actor and rap singer, standing out mainly in these last two. He has the merit of being the only actor so far to participate consecutively in a line of eight films that generated more than one hundred million dollars in revenues and headed the first positions after being released. After starring in the company of his son, in the movie, The Pursuit of Happiness, Will won the Oscar Award as best actor."
+                    },
+                    "Genre": {
+                        "Name": "Science",
+                        "Description": "Scientific documentaries portrays science to the viewer in a way that is engaging, entertaining, and educational."
+                    },
+                    "ImagePath": "https://m.media-amazon.com/images/M/MV5BMzBlYjhmYTMtNzY1ZS00ZGU2LWFmMzktYTg5ZGU1N2JlMGRmXkEyXkFqcGdeQXVyMTg3MDg4NzM@._V1_FMjpg_UX1000_.jpg",
+                    "Featured": true
+                },
+                {
+                    "_id": {
+                        "$oid": "62b0c35777845f0f03ca6df5"
+                    },
+                    "Title": "Unnatural Selection",
+                    "Description": "DNA, the very essence of life, can now be altered. Not only by Harvard geneticists and multi-billion dollar corporations, but also by renegade biohackers working out of their garages.",
+                    "ReleaseYear": "2019",
+                    "FeaturedPersonality": {
+                        "Name": "Joe Egender",
+                        "Birth": "1976",
+                        "Biography": "Joe Egender was born in Kansas City, Missouri, USA. He is an actor and producer, known for Unnatural Selection (2019), The Night Of (2016) and American Horror Story (2011)."
+                    },
+                    "Genre": {
+                        "Name": "Science",
+                        "Description": "Scientific documentaries portrays science to the viewer in a way that is engaging, entertaining, and educational."
+                    },
+                    "ImagePath": "https://m.media-amazon.com/images/M/MV5BYmRjOWU0MDAtMzRiZi00ZGUzLWFmZjItOTQwZDAxYzlkZjM1XkEyXkFqcGdeQXVyMjMyNTY1MDc@._V1_FMjpg_UX1000_.jpg",
+                    "Featured": true
+                },
+                {
+                    "_id": {
+                        "$oid": "62b0c37077845f0f03ca6df6"
+                    },
+                    "Title": "Planet Earth II",
+                    "Description": "The wildlife documentary series with Sir David Attenborough continues with a unique and intimate glimpse into secretive lives of mountain-dwelling animals.",
+                    "ReleaseYear": "2016",
+                    "FeaturedPersonality": {
+                        "Name": "David Attenborough",
+                        "Birth": "1926",
+                        "Biography": "David Attenborough, Godfather of natural history TV, has introduced generations to the world’s furry and feathered friends. Beyond natural history he’s had a huge influence as a broadcaster, introducing colour TV when he was Controller of BBC Two. Born in London in 1926, Attenborough collected fossils as a child and gained a Natural Sciences degree from Cambridge. Since the launch of his famous Zoo Quest series in 1954 to the recent Planet Earth, he has surveyed almost every aspect of life on earth. Attenborough’s trophy cabinet has recently acquired the prestigious Lifetime Achievement Award. In addition, he has been knighted, had species named after him and the Sir David Attenborough Studio is planned for London’s Natural History Museum in 2008."
+                    },
+                    "Genre": {
+                        "Name": "Nature",
+                        "Description": "Nature documentaries portray animals, plants or other non-human living creatures, usually in their natural habitat, educating viewers on our, often hidden, natural world."
+                    },
+                    "ImagePath": "https://m.media-amazon.com/images/M/MV5BZWYxODViMGYtMGE2ZC00ZGQ3LThhMWUtYTVkNGE3OWU4NWRkL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMjYwNDA2MDE@._V1_FMjpg_UX1000_.jpg",
+                    "Featured": true
+                }
+            ],
+            selectedDocumentary: null
+        };
+    }
+    setSelectedDocumentary(newSelectedDocumentary) {
+        this.setState({
+            selectedDocumentary: newSelectedDocumentary
+        });
+    }
+    render() {
+        const { documentaries , selectedDocumentary  } = this.state;
+        if (documentaries.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            className: "main-view",
+            __source: {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 84
+            },
+            __self: this,
+            children: "The list is empty!"
+        }));
+        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            className: "main-view",
+            __source: {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 87
+            },
+            __self: this,
+            children: selectedDocumentary ? /*#__PURE__*/ _jsxRuntime.jsx(_documentaryView.DocumentaryView, {
+                documentary: selectedDocumentary,
+                onBackClick: (newSelectedDocumentary)=>{
+                    this.setSelectedDocumentary(newSelectedDocumentary);
+                },
+                __source: {
+                    fileName: "src/components/main-view/main-view.jsx",
+                    lineNumber: 89
+                },
+                __self: this
+            }) : documentaries.map((documentary)=>/*#__PURE__*/ _jsxRuntime.jsx(_documentaryCard.DocumentaryCard, {
+                    documentary: documentary,
+                    onDocumentaryClick: (documentary1)=>{
+                        this.setSelectedDocumentary(documentary1);
+                    },
+                    __source: {
+                        fileName: "src/components/main-view/main-view.jsx",
+                        lineNumber: 91
+                    },
+                    __self: this
+                }, documentary._id)
+            )
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$35bf.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"9AY5K","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"659dA","../documentary-card/documentary-card":"6hZ9t","../documentary-view/documentary-view":"lcLaB"}],"6hZ9t":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9417 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9417.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "DocumentaryCard", ()=>DocumentaryCard
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class DocumentaryCard extends _reactDefault.default.Component {
+    render() {
+        const { documentary , onDocumentaryClick  } = this.props;
+        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            className: "documentary-card",
+            onClick: ()=>{
+                onDocumentaryClick(documentary);
+            },
+            __source: {
+                fileName: "src/components/documentary-card/documentary-card.jsx",
+                lineNumber: 7
+            },
+            __self: this,
+            children: documentary.Title
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$9417.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"9AY5K","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"659dA"}],"lcLaB":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1c8b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1c8b.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "DocumentaryView", ()=>DocumentaryView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class DocumentaryView extends _reactDefault.default.Component {
+    render() {
+        const { documentary , onBackClick  } = this.props;
+        return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+            className: "documentary-view",
+            __source: {
+                fileName: "src/components/documentary-view/documentary-view.jsx",
+                lineNumber: 9
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                    className: "documentary-poster",
+                    __source: {
+                        fileName: "src/components/documentary-view/documentary-view.jsx",
+                        lineNumber: 10
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                        src: documentary.ImagePath,
+                        __source: {
+                            fileName: "src/components/documentary-view/documentary-view.jsx",
+                            lineNumber: 11
+                        },
+                        __self: this
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                    className: "documentary-title",
+                    __source: {
+                        fileName: "src/components/documentary-view/documentary-view.jsx",
+                        lineNumber: 13
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                            className: "label",
+                            __source: {
+                                fileName: "src/components/documentary-view/documentary-view.jsx",
+                                lineNumber: 14
+                            },
+                            __self: this,
+                            children: "Title: "
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                            className: "value",
+                            __source: {
+                                fileName: "src/components/documentary-view/documentary-view.jsx",
+                                lineNumber: 15
+                            },
+                            __self: this,
+                            children: documentary.Title
+                        })
+                    ]
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                    className: "documentary-description",
+                    __source: {
+                        fileName: "src/components/documentary-view/documentary-view.jsx",
+                        lineNumber: 17
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                            className: "label",
+                            __source: {
+                                fileName: "src/components/documentary-view/documentary-view.jsx",
+                                lineNumber: 18
+                            },
+                            __self: this,
+                            children: "Description: "
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                            className: "value",
+                            __source: {
+                                fileName: "src/components/documentary-view/documentary-view.jsx",
+                                lineNumber: 19
+                            },
+                            __self: this,
+                            children: documentary.Description
+                        })
+                    ]
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                    onClick: ()=>{
+                        onBackClick(null);
+                    },
+                    __source: {
+                        fileName: "src/components/documentary-view/documentary-view.jsx",
+                        lineNumber: 21
+                    },
+                    __self: this,
+                    children: "Back"
+                })
+            ]
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$1c8b.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"9AY5K","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"659dA"}]},["deH6B","jXu13","dLPEP"], "dLPEP", "parcelRequire9723")
 
 //# sourceMappingURL=index.6701a6e1.js.map
