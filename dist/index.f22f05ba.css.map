@@ -1,0 +1,1 @@
+{"mappings":"AAEA;EACE,OAHM","sources":["devProjects/documentary-central-client2/src/index.scss"],"sourcesContent":["$color: steelblue;\n\n.documentary-central {\n  color: $color;\n}"],"names":[],"version":3,"file":"index.f22f05ba.css.map","sourceRoot":"/__parcel_source_root/"}
