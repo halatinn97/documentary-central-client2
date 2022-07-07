@@ -5,6 +5,8 @@ import { LoginView } from '../login-view/login-view';
 import { DocumentaryCard } from '../documentary-card/documentary-card';
 import { DocumentaryView } from '../documentary-view/documentary-view';
 import Row from 'react-bootstrap/Row';
+import './main-view.scss';
+
 
 
 export class MainView extends React.Component {

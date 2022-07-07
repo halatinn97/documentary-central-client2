@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import { Button, Card, Container, Col, Row } from 'react-bootstrap';
+import './documentary-card.scss';
 
 
 export class DocumentaryCard extends React.Component {
@@ -10,14 +10,16 @@ export class DocumentaryCard extends React.Component {
         const { documentary, onDocumentaryClick } = this.props;
 
         return (
-            <Card>
-                <Card.Img variant="top" src={documentary.ImagePath} />
-                <Card.Body>
-                    <Card.Title>{documentary.Title}</Card.Title>
-                    <Card.Text>{documentary.Description}</Card.Text>
-                    <Button onClick={() => onDocumentaryClick(documentary)} variant="link">Open</Button>
-                </Card.Body>
-            </Card>
+            <Container className="documentary-card">
+                <Card>
+                    <Card.Img variant="top" src={documentary.ImagePath} />
+                    <Card.Body>
+                        <Card.Title>{documentary.Title}</Card.Title>
+                        <Card.Text>{documentary.Description}</Card.Text>
+                        <Button onClick={() => onDocumentaryClick(documentary)} variant="link">Open</Button>
+                    </Card.Body>
+                </Card>
+            </Container>
         );
     }
 }

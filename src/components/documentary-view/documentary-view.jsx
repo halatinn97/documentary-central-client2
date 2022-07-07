@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { Button, Container, Row, Col } from 'react-bootstrap';
+import './documentary-view.scss';
 
 export class DocumentaryView extends React.Component {
 
@@ -8,33 +9,33 @@ export class DocumentaryView extends React.Component {
         const { documentary, onBackClick } = this.props;
 
         return (
-            <div className="documentary-view">
-                <div className="documentary-poster">
+            <Container className="documentary-view">
+                <Row className="documentary-poster">
                     <img src={documentary.ImagePath} />
-                </div>
-                <div className="documentary-title">
-                    <span className="label">Title: </span>
-                    <span className="value">{documentary.Title}</span>
-                </div>
-                <div className="documentary-description">
-                    <span className="label">Description: </span>
-                    <span className="value">{documentary.Description}</span>
-                </div>
-                <div className="documentary-release">
-                    <span className="label">Release year: </span>
-                    <span className="value">{documentary.ReleaseYear}</span>
-                </div>
-                <div className="documentary-release">
-                    <span className="label">Genre: </span>
-                    <span className="value">{documentary.Genre.Name}</span>
-                </div>
-                <div className="documentary-personality">
-                    <span className="label">Featured personality: </span>
-                    <span className="value">{documentary.FeaturedPersonality.Name}</span>
-                </div>
-                <button onClick={() => { onBackClick(null); }}>Back</button>
+                </Row>
+                <Row className="documentary-title">
+                    <Col className="label">Title: </Col>
+                    <Col className="value">{documentary.Title}</Col>
+                </Row>
+                <Row className="documentary-description">
+                    <Col className="label">Description: </Col>
+                    <Col className="value">{documentary.Description}</Col>
+                </Row>
+                <Row className="documentary-release">
+                    <Col className="label">Release year: </Col>
+                    <Col className="value">{documentary.ReleaseYear}</Col>
+                </Row>
+                <Row className="documentary-release">
+                    <Col className="label">Genre: </Col>
+                    <Col className="value">{documentary.Genre.Name}</Col>
+                </Row>
+                <Row className="documentary-personality">
+                    <Col className="label">Featured personality: </Col>
+                    <Col className="value">{documentary.FeaturedPersonality.Name}</Col>
+                </Row>
+                <Button onClick={() => { onBackClick(null); }}>Back</Button>
+            </Container>
 
-            </div>
         );
     }
 }

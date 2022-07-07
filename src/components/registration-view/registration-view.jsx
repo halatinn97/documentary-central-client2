@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button, Card, CardGroup, Container, Col, Row } from 'react-bootstrap';
-
-import './registration-view.scss';
 import axios from 'axios'
+import './registration-view.scss';
+
 
 export function RegistrationView(props) {
     const [username, setUsername] = useState('');
@@ -22,7 +22,8 @@ export function RegistrationView(props) {
         })
             .then(response => {
                 const data = response.data;
-                console.log(data);
+                props.onRegistered(data)
+                /*console.log(data);*/
                 window.open('/', '_self');
             })
 
@@ -31,6 +32,7 @@ export function RegistrationView(props) {
                 alert('Something was not entered right.')
             });
     };
+
 
     return (
         <Container>
