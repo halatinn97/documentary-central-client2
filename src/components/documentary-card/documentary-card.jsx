@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Card, Container, Col, Row } from 'react-bootstrap';
 import './documentary-card.scss';
+import { Link } from "react-router-dom";
 
 
 export class DocumentaryCard extends React.Component {
     render() {
 
-        const { documentary, onDocumentaryClick } = this.props;
+        const { documentary } = this.props;
 
         return (
             <Container className="documentary-card">
@@ -16,7 +17,9 @@ export class DocumentaryCard extends React.Component {
                     <Card.Body>
                         <Card.Title>{documentary.Title}</Card.Title>
                         <Card.Text>{documentary.Description}</Card.Text>
-                        <Button onClick={() => onDocumentaryClick(documentary)} variant="link">Open</Button>
+                        <Link to={`/documentaries/${documentary._id}`}>
+                            <Button variant="link">Open</Button>
+                        </Link>
                     </Card.Body>
                 </Card>
             </Container>
