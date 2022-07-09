@@ -6,7 +6,7 @@ import './documentary-view.scss';
 export class DocumentaryView extends React.Component {
 
     render() {
-        const { documentary, onBackClick } = this.props;
+        const { documentary } = this.props;
 
         return (
             <Container className="documentary-view">
@@ -33,7 +33,13 @@ export class DocumentaryView extends React.Component {
                     <Col className="label">Featured personality: </Col>
                     <Col className="value">{documentary.FeaturedPersonality.Name}</Col>
                 </Row>
-                <Button onClick={() => { onBackClick(null); }}>Back</Button>
+                <Link to={`/featuredPersonalities/${documentaries.featuredPersonality.Name}`}>
+                    <Button variant="link">Featured Personality</Button>
+                </Link>
+
+                <Link to={`/genres/${movie.Genre.Name}`}>
+                    <Button variant="link">Genre</Button>
+                </Link>
             </Container>
 
         );
