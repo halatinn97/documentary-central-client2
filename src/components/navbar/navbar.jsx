@@ -1,5 +1,6 @@
 import React from 'react';
-import { Navbar, Container, Form, Button, Nav, Container } from 'react-bootstrap'
+import { Navbar, NavDropdown, Container, Form, Button, Nav, FormControl } from 'react-bootstrap'
+import './navbar.scss';
 
 
 
@@ -24,7 +25,6 @@ export function Menubar({ user }) {
     return (
         <Navbar bg="light" expand="lg">
             <Container fluid>
-                <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
