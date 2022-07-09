@@ -8,6 +8,7 @@ import { DocumentaryView } from '../documentary-view/documentary-view';
 import { GenreView } from '../genre-view/genre-view';
 import { PersonalityView } from '../personality-view/personality-view';
 import { ProfileView } from '../profile-view/profile-view';
+import { Menubar } from '../navbar/navbar';
 import { Row, Col } from 'react-bootstrap';
 import './main-view.scss';
 
@@ -85,6 +86,7 @@ export class MainView extends React.Component {
 
         return (
             <Router>
+                <Menubar user={user} />
                 <Row className="main-view justify-content-md-center">
                     <Route exact path="/" render={() => {
                         if (!user) return <Col>
@@ -113,7 +115,7 @@ export class MainView extends React.Component {
                         if (documentaries.length === 0) return <div className="main-view" />;
 
                         return <Col md={8}>
-                            <GenreView genre={documentaries.find(m => m.Genre.Name === match.params.name)} onBackClick={() => history.goBack()} />
+                            <GenreView genre={documentaries.find(documentary => documentary.Genre.Name === match.params.name)} onBackClick={() => history.goBack()} />
                         </Col>
                     }} />
                     <Route path="documentaries/featuredPersonalities/:name" render={({ match, history }) => {
@@ -122,7 +124,7 @@ export class MainView extends React.Component {
                             <PersonalityView featuredPersonality={documentaries.find(documentary => documentary.featuredPersonality.Name === match.params.name).featuredPersonality} onBackClick={() => history.goBack()} />
                         </Col>
                     }} />
-                    <Route path="/users/:Username" render={({ history }) => {
+                    <Route path="/users/:Username" /* `/users/${user}`" */ render={({ history }) => {
                         if (!user) return <Col>
                             <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                         </Col>
