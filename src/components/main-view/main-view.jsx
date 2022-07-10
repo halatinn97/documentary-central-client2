@@ -73,7 +73,7 @@ export class MainView extends React.Component {
             .then(response => {
                 // Assign the result to the state
                 this.setState({
-                    movies: response.data
+                    documentaries: response.data
                 });
             })
             .catch(function (error) {
