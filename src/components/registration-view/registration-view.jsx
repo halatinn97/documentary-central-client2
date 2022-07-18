@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import './registration-view.scss';
 
 
+
 export function RegistrationView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -16,7 +17,7 @@ export function RegistrationView(props) {
     const [passwordErr, setPasswordErr] = useState('');
     const [emailErr, setEmailErr] = useState('');
 
-
+    console.log('hello')
 
 
     const validate = () => {
@@ -46,7 +47,7 @@ export function RegistrationView(props) {
         return isReq;
     };
 
-    const handleSubmit = (e) => {
+    const handleRegister = (e) => {
         e.preventDefault();
         const isReq = validate();
         if (isReq) {
@@ -59,91 +60,93 @@ export function RegistrationView(props) {
             })
                 .then(response => {
                     const data = response.data;
-                    props.onRegistered(data)
-                    /*console.log(data);*/
+                    console.log(data)
+                    alert('Registered successfully. Please log in to access website.')
                     window.open('/', '_self');
                 })
 
                 .catch(error => {
-                    console.log(error);
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
                     alert('Something was not entered right.')
                 });
         };
-
-
-        return (
-            <Container>
-                <Row>
-                    <Col>
-                        <CardGroup>
-                            <Card>
-                                <Card.Body>
-                                    <Card.Title>Register now to view unlimited documentaries, anywhere, anytime.</Card.Title>
-                                    <Form>
-                                        <Form.Group controlId="formUsername">
-                                            <Form.Label>Username:  </Form.Label>
-                                            <Form.Control
-                                                type="text"
-                                                value={username}
-                                                onChange={e => setUsername(e.target.value)}
-                                                required
-                                                placeholder="Enter a username"
-                                            />
-                                            {usernameErr && <p>{usernameErr}</p>}
-
-                                        </Form.Group>
-
-                                        <Form.Group controlId="formPassword">
-                                            <Form.Label>Password:  </Form.Label>
-                                            <Form.Control
-                                                type="password"
-                                                value={password}
-                                                onChange={e => setPassword(e.target.value)}
-                                                required
-                                                minLength="8"
-                                                placeholder="Enter a password"
-                                            />
-                                            {passwordErr && <p>{passwordErr}</p>}
-                                        </Form.Group>
-
-                                        <Form.Group controlId="formEmail">
-                                            <Form.Label>Email: </Form.Label>
-                                            <Form.Control
-                                                type="text"
-                                                value={email}
-                                                onChange={e => setEmail(e.target.value)}
-                                                required
-                                                placeholder="Enter an email"
-                                            />
-                                            {emailErr && <p>{emailErr}</p>}
-
-                                        </Form.Group>
-
-                                        <Form.Group controlId="formBirthday">
-                                            <Form.Label>Birthday: </Form.Label>
-                                            <Form.Control
-                                                type="text"
-                                                value={birthday}
-                                                onChange={e => setBirthday(e.target.value)}
-                                                placeholder="Enter a birthday"
-                                            />
-                                        </Form.Group>
-                                        <Button variant="primary" type="submit"
-                                            onClick={handleSubmit}>Submit</Button>
-                                        <p></p>
-                                        <p>Already registered <Link to={'/'}>Sign in</Link>here</p>
-                                    </Form>
-
-                                </Card.Body>
-                            </Card>
-                        </CardGroup>
-                    </Col>
-                </Row>
-            </Container>
-
-        );
     }
+
+    return (
+        <Container>
+            <Row>
+                <Col>
+                    <CardGroup>
+                        <Card>
+                            <Card.Body>
+                                <Card.Title>Register now to view unlimited documentaries, anywhere, anytime.</Card.Title>
+                                <Form>
+                                    <Form.Group controlId="formUsername">
+                                        <Form.Label>Username:  </Form.Label>
+                                        <Form.Control
+                                            type="text"
+                                            value={username}
+                                            onChange={e => setUsername(e.target.value)}
+                                            required
+                                            placeholder="Enter a username"
+                                        />
+                                        {usernameErr && <p>{usernameErr}</p>}
+
+                                    </Form.Group>
+
+                                    <Form.Group controlId="formPassword">
+                                        <Form.Label>Password:  </Form.Label>
+                                        <Form.Control
+                                            type="password"
+                                            value={password}
+                                            onChange={e => setPassword(e.target.value)}
+                                            required
+                                            minLength="8"
+                                            placeholder="Enter a password"
+                                        />
+                                        {passwordErr && <p>{passwordErr}</p>}
+                                    </Form.Group>
+
+                                    <Form.Group controlId="formEmail">
+                                        <Form.Label>Email: </Form.Label>
+                                        <Form.Control
+                                            type="email"
+                                            value={email}
+                                            onChange={e => setEmail(e.target.value)}
+                                            required
+                                            placeholder="Enter an email"
+                                        />
+                                        {emailErr && <p>{emailErr}</p>}
+
+                                    </Form.Group>
+
+                                    <Form.Group controlId="formBirthday">
+                                        <Form.Label>Birthday: </Form.Label>
+                                        <Form.Control
+                                            type="date"
+                                            value={birthday}
+                                            onChange={e => setBirthday(e.target.value)}
+                                            placeholder="Enter a birthday"
+                                        />
+                                    </Form.Group>
+                                    <Button variant="primary" type="submit"
+                                        onClick={handleRegister}>Submit</Button>
+                                    <p></p>
+                                    <p>Already registered? <Link to={'/'}>Sign in here</Link></p>
+                                </Form>
+
+                            </Card.Body>
+                        </Card>
+                    </CardGroup>
+                </Col>
+            </Row>
+        </Container>
+
+    );
 }
+
 
 /*
 RegistrationView.propTypes = {
