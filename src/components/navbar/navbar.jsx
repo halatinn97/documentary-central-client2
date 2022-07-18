@@ -24,7 +24,8 @@ export function Menubar({ user }) {
 
     return (
         <Navbar bg="light" expand="lg">
-            <Container fluid>
+            <Container fluid className="navbar">
+                <Navbar.Brand>Documentary-Central</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -33,34 +34,42 @@ export function Menubar({ user }) {
                         navbarScroll
                     >
                         {isAuth() && (
-                            <Nav.Link href="{`/users/$(user)}>{user}`"></Nav.Link>
-                        )}
-                        <Nav.Link href="#action1">Home</Nav.Link>
-                        <Nav.Link href="#action2">Profile</Nav.Link>
-                        {!isAuth() && (
-                            <Nav.Link href="{/register}">Sign-up</Nav.Link>
-                        )}
-                        {!isAuth() && (
                             <Button variant="link" onClick={() => { onLoggedOut() }}>Logout</Button>
                         )}
+                        {isAuth() && (
+                            <Nav.Link href={`/users/${user}`}>Profile</Nav.Link>
+                        )}
+                        {isAuth() && (
+                            <Nav.Link href="/">Home</Nav.Link>
+                        )}
 
-                        <NavDropdown title="Documentaries" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="{/documentaries}">Documentaries</NavDropdown.Item>
-                            <NavDropdown.Item href="#{documentaries/featuredPersonalities}">Personalities</NavDropdown.Item>
-                            <NavDropdown.Item href="{/genre}">Genre</NavDropdown.Item>
-                        </NavDropdown>
+                        {/*!isAuth() && (
+                            <Nav.Link href="/register">Sign-up</Nav.Link>
+                        )*/}
+
+                        {isAuth() && (
+                            <NavDropdown title="Documentaries" id="navbarScrollingDropdown">
+                                <NavDropdown.Item href="/">Documentaries</NavDropdown.Item>
+                                <NavDropdown.Item href="featuredPersonalities/">Personalities</NavDropdown.Item>
+                                <NavDropdown.Item href="genre/">Genre</NavDropdown.Item>
+                            </NavDropdown>
+                        )}
                     </Nav>
                     <Form className="d-flex">
-                        <FormControl
-                            type="search"
-                            placeholder="Search"
-                            className="me-2"
-                            aria-label="Search"
-                        />
-                        <Button variant="outline-success">Search</Button>
+                        {isAuth() && (
+                            <FormControl
+                                type="search"
+                                placeholder="Search"
+                                className="me-2"
+                                aria-label="Search"
+                            />
+                        )}
+                        {isAuth() && (
+                            <Button variant="outline-success" className="search-button">Search</Button>
+                        )}
                     </Form>
                 </Navbar.Collapse>
             </Container>
-        </Navbar>
+        </Navbar >
     );
 }
