@@ -1,9 +1,22 @@
 $background: #ebbd34;
 $black: #000;
 $white: #fff;
+$blue: #007bff; 
 
 
 .app-container {
     height: 100vh;
     background-color: $background;
 }
+
+/*
+.btn-primary.login-button {
+    background-color: yellow;
+}
+*/
+
+.btn.register-button {
+    background-color: $blue;
+    color: $white;
+}
+
