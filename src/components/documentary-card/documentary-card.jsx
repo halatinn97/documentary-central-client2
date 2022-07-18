@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export class DocumentaryCard extends React.Component {
     render() {
 
-        const { documentary } = this.props;
+        const { documentary, user } = this.props;
 
         return (
             <Container className="documentary-card">
@@ -19,6 +19,9 @@ export class DocumentaryCard extends React.Component {
                         <Card.Text>{documentary.Description}</Card.Text>
                         <Link to={`/documentaries/${documentary._id}`}>
                             <Button variant="link">Open</Button>
+                        </Link>
+                        <Link to={`users/${user}/documentaries/${documentary._id}`}>
+                            <Button variant="link">Add to 💙</Button>
                         </Link>
                     </Card.Body>
                 </Card>
@@ -31,7 +34,6 @@ DocumentaryCard.propTypes = {
     documentary: PropTypes.shape({
         Title: PropTypes.string.isRequired,
         ImagePath: PropTypes.string.isRequired,
-        ReleaseYear: PropTypes.number.isRequired,
         Featured: PropTypes.bool,
         Genre: PropTypes.shape({
             Name: PropTypes.string.isRequired,
@@ -42,6 +44,5 @@ DocumentaryCard.propTypes = {
             Birth: PropTypes.number.isRequired,
             Biography: PropTypes.string.isRequired
         }),
-    }).isRequired,
-    onDocumentaryClick: PropTypes.func.isRequired
+    }).isRequired
 };

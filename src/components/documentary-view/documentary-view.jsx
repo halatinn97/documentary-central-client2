@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 export class DocumentaryView extends React.Component {
 
     render() {
-        const { documentary } = this.props;
+        const { documentary, user } = this.props;
 
         return (
             < Container className="documentary-view" >
@@ -42,8 +42,10 @@ export class DocumentaryView extends React.Component {
                 <Link to={`/genres/${documentary.Genre.Name}`}>
                     <Button variant="link">Genre</Button>
                 </Link>
-                <Button variant="link">Add to 💙</Button>
-            </Container >
+                <Link to={`users/${user}/documentaries/${documentary._id}`}>
+                    <Button variant="link">Add to 💙</Button>
+                </Link>
+            </Container>
         );
     }
 }
