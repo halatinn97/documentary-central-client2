@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import './documentary-view.scss';
+import { Link } from 'react-router-dom';
+
 
 export class DocumentaryView extends React.Component {
 
@@ -9,7 +11,7 @@ export class DocumentaryView extends React.Component {
         const { documentary } = this.props;
 
         return (
-            <Container className="documentary-view">
+            < Container className="documentary-view" >
                 <Row className="documentary-poster">
                     <img src={documentary.ImagePath} />
                 </Row>
@@ -33,22 +35,24 @@ export class DocumentaryView extends React.Component {
                     <Col className="label">Featured personality: </Col>
                     <Col className="value">{documentary.FeaturedPersonality.Name}</Col>
                 </Row>
-                <Link to={`/featuredPersonalities/${documentaries.featuredPersonality.Name}`}>
+                <Link to={`/featuredPersonalities/${documentary.FeaturedPersonality.Name}`}>
                     <Button variant="link">Featured Personality</Button>
                 </Link>
 
-                <Link to={`/genres/${movie.Genre.Name}`}>
+                <Link to={`/genres/${documentary.Genre.Name}`}>
                     <Button variant="link">Genre</Button>
                 </Link>
-            </Container>
-
+                <Button variant="link">Add to 💙</Button>
+            </Container >
         );
     }
 }
 
+/*
 DocumentaryView.propTypes = {
     documentary: PropTypes.shape({
         Title: PropTypes.string.isRequired,
+        Description: PropTypes.string.isRequired,
         ImagePath: PropTypes.string.isRequired,
         ReleaseYear: PropTypes.number.isRequired,
         Featured: PropTypes.bool,
@@ -61,6 +65,6 @@ DocumentaryView.propTypes = {
             Birth: PropTypes.number.isRequired,
             Biography: PropTypes.string.isRequired
         }),
-    }).isRequired,
-    onDocumentaryClick: PropTypes.func.isRequired
+    }).isRequired
 };
+*/
