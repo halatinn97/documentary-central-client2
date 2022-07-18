@@ -71,7 +71,6 @@ export class MainView extends React.Component {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then(response => {
-                // Assign the result to the state
                 this.setState({
                     documentaries: response.data
                 });
@@ -101,30 +100,30 @@ export class MainView extends React.Component {
                     }} />
                     <Route path="/register" render={() => {
                         if (user) return <Redirect to="/" />
-                        return <Col>
+                        return (<Col>
                             <RegistrationView />
-                        </Col>
+                        </Col>)
                     }} />
-                    <Route path="/documentaries/:DocumentaryId" render={({ match, history }) => {
+                    <Route path="/documentaries/:DocumentaryID" render={({ match, history }) => {
                         if (documentaries.length === 0) return <div className="main-view" />;
                         return <Col md={8}>
-                            <DocumentaryView documentary={documentaries.find(documentary => documentary._id === match.params.DocumentaryId)} onBackClick={() => history.goBack()} />
+                            <DocumentaryView documentary={documentaries.find(documentary => documentary._id === match.params.DocumentaryID)} onBackClick={() => history.goBack()} />
                         </Col>
                     }} />
-                    <Route path="/documentaries/genre/:Name" render={({ match, history }) => {
+                    <Route path="/genres/:Name" render={({ match, history }) => {
                         if (documentaries.length === 0) return <div className="main-view" />;
 
                         return <Col md={8}>
-                            <GenreView genre={documentaries.find(documentary => documentary.Genre.Name === match.params.name)} onBackClick={() => history.goBack()} />
+                            <GenreView genre={documentaries.find(documentary => documentary.Genre.Name === match.params.Name).Genre} onBackClick={() => history.goBack()} />
                         </Col>
                     }} />
-                    <Route path="documentaries/featuredPersonalities/:name" render={({ match, history }) => {
+                    <Route exact path="/featuredPersonalities/:Name" render={({ match, history }) => {
                         if (documentaries.length === 0) return <div className="main-view" />;
                         return <Col md={8}>
-                            <PersonalityView featuredPersonality={documentaries.find(documentary => documentary.featuredPersonality.Name === match.params.name).featuredPersonality} onBackClick={() => history.goBack()} />
+                            <PersonalityView featuredPersonality={documentaries.find(documentary => documentary.FeaturedPersonality.Name === match.params.Name).FeaturedPersonality} onBackClick={() => history.goBack()} />
                         </Col>
                     }} />
-                    <Route path="/users/:Username" /* `/users/${user}`" */ render={({ history }) => {
+                    <Route path={`/users/${user}`} render={({ history }) => {
                         if (!user) return <Col>
                             <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                         </Col>
