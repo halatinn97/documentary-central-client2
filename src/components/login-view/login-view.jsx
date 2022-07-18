@@ -3,6 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import './login-view.scss';
+import { Link } from 'react-router-dom';
 
 
 
@@ -33,7 +34,7 @@ export function LoginView(props) {
         return isReq;
     }
 
-    const handleSubmit = (e) => {
+    const handleLogin = (e) => {
         e.preventDefault();
         const isReq = validate();
         if (isReq) {
@@ -53,7 +54,6 @@ export function LoginView(props) {
     };
 
 
-
     return (
         <Form>
             <Form.Group controlId="formUsername">
@@ -67,9 +67,10 @@ export function LoginView(props) {
                 <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
                 {passwordErr && <p>{passwordErr}</p>}
             </Form.Group>
-            <Button variant="primary" type="submit" onClick={handleSubmit}>
-                Submit
-      </Button>
+            <Button variant="primary" type="submit" onClick={handleLogin} className="login-button">Login</Button>
+            <Link to="/register">
+                <Button variant="button" className="register-button">Register</Button>
+            </Link>
         </Form>
     );
 }
