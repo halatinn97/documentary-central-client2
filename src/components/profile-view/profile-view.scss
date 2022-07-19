@@ -1,0 +1,20 @@
+$background: #10032b;
+$yellow: #ebbd34;
+$black: #000;
+$white: #fff;
+$blue: #007bff; 
+
+
+.app-container {
+    height: 100vh;
+    background-color: $background;
+}
+
+
+.white-text, .form-label {
+    color: $white;
+}
+
+.update-button {
+    margin-right: 5px;
+}

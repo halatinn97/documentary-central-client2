@@ -6,14 +6,18 @@ import { Link } from "react-router-dom";
 
 
 export class DocumentaryCard extends React.Component {
+
     render() {
+        const imageClick = () => {
+            window.open(`/documentaries/${documentary._id}`, '_self')
+        }
 
         const { documentary, user } = this.props;
 
         return (
-            <Container className="documentary-card">
+            <Container className="documentary-card" onClick={() => imageClick()} >
                 <Card>
-                    <Card.Img variant="top" src={documentary.ImagePath} />
+                    <Card.Img className="card-poster" variant="top" src={documentary.ImagePath} />
                     <Card.Body>
                         <Card.Title>{documentary.Title}</Card.Title>
                         <Card.Text>{documentary.Description}</Card.Text>

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Container, Row, Col } from 'react-bootstrap';
+import { Button, Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
 import './documentary-view.scss';
 import { Link } from 'react-router-dom';
 
@@ -11,41 +11,68 @@ export class DocumentaryView extends React.Component {
         const { documentary, user } = this.props;
 
         return (
-            < Container className="documentary-view" >
-                <Row className="documentary-poster">
-                    <img src={documentary.ImagePath} />
-                </Row>
-                <Row className="documentary-title">
-                    <Col className="label">Title: </Col>
-                    <Col className="value">{documentary.Title}</Col>
-                </Row>
-                <Row className="documentary-description">
-                    <Col className="label">Description: </Col>
-                    <Col className="value">{documentary.Description}</Col>
-                </Row>
-                <Row className="documentary-release">
-                    <Col className="label">Release year: </Col>
-                    <Col className="value">{documentary.ReleaseYear}</Col>
-                </Row>
-                <Row className="documentary-release">
-                    <Col className="label">Genre: </Col>
-                    <Col className="value">{documentary.Genre.Name}</Col>
-                </Row>
-                <Row className="documentary-personality">
-                    <Col className="label">Featured personality: </Col>
-                    <Col className="value">{documentary.FeaturedPersonality.Name}</Col>
-                </Row>
-                <Link to={`/featuredPersonalities/${documentary.FeaturedPersonality.Name}`}>
-                    <Button variant="link">Featured Personality</Button>
-                </Link>
-
-                <Link to={`/genres/${documentary.Genre.Name}`}>
-                    <Button variant="link">Genre</Button>
-                </Link>
-                <Link to={`users/${user}/documentaries/${documentary._id}`}>
-                    <Button variant="link">Add to 💙</Button>
-                </Link>
+            <Container className="documentary-view">
+                <Card className="documentary-view">
+                    <Card.Img
+                        className="documentary-poster"
+                        img src={documentary.ImagePath}
+                    />
+                    <Card.Body>
+                        <Row className="documentary-title">
+                            <Col>
+                                <Card.Subtitle className="label">
+                                    Title:
+                            </Card.Subtitle>
+                            </Col>
+                            <Col className="value">{documentary.Title}</Col>
+                        </Row>
+                        <Row className="documentary-description">
+                            <Col>
+                                <Card.Subtitle className="label" >
+                                    Description:
+                                </Card.Subtitle>
+                            </Col>
+                            <Col className="value">{documentary.Description}</Col>
+                        </Row>
+                        <Row className="documentary-release">
+                            <Col>
+                                <Card.Subtitle className="label">
+                                    Release year:
+                            </Card.Subtitle>
+                            </Col>
+                            <Col className="value">{documentary.ReleaseYear}</Col>
+                        </Row>
+                        <Row className="documentary-release">
+                            <Col>
+                                <Card.Subtitle className="label">
+                                    Genre:
+                            </Card.Subtitle>
+                            </Col>
+                            <Col className="value">
+                                <Link to={`/genres/${documentary.Genre.Name}`}>
+                                    {documentary.Genre.Name}
+                                </Link>
+                            </Col>
+                        </Row>
+                        <Row className="documentary-personality">
+                            <Col>
+                                <Card.Subtitle className="label">
+                                    Featured personality:
+                                </Card.Subtitle>
+                            </Col>
+                            <Col className="value">
+                                <Link className="hover-link" to={`/featuredPersonalities/${documentary.FeaturedPersonality.Name}`}>
+                                    {documentary.FeaturedPersonality.Name}
+                                </Link>
+                            </Col>
+                        </Row>
+                        <Link to={`users/${user}/documentaries/${documentary._id}`}>
+                            <Button variant="link">Add to 💙</Button>
+                        </Link>
+                    </Card.Body>
+                </Card>
             </Container>
+
         );
     }
 }

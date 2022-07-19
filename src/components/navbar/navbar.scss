@@ -1,11 +1,12 @@
-$background: #ebbd34;
+$background: #10032b;
+$yellow: #ebbd34;
 $black: #000;
 $white: #fff;
 $blue: #007bff; 
 
 
 .app-container {
-    height: 100vh;
+    height: 100%;
     background-color: $background;
 }
 
@@ -20,4 +21,7 @@ $blue: #007bff;
     color: $white;
 }
 
-
+.search-box {
+    display: flex;
+    justify-content: flex-end;
+}

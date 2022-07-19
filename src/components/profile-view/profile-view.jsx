@@ -144,7 +144,7 @@ export function ProfileView() {
     return (
 
         <Fragment>
-            <h4> Current profile information: </h4>
+            <h4 className="white-text"> Current profile information: </h4>
             <Card text='dark' className="user-form">
                 <Card.Body>
                     <Card.Text>Username: {username}</Card.Text>
@@ -155,8 +155,10 @@ export function ProfileView() {
                 </Card.Body>
             </Card>
 
+            <br>
+            </br>
 
-            <h4> Edit profile information: </h4>
+            <h4 className="white-text"> Edit profile information: </h4>
             <Form className="profile-form">
                 <Form.Group className="mb-3" controlId="username">
                     <Form.Label>Username</Form.Label>
@@ -202,11 +204,14 @@ export function ProfileView() {
                     />
                     {passwordErr && <p>{passwordErr}</p>}
                 </Form.Group>
-                <Button variant="primary" type="submit" onClick={handleUpdate}>Update</Button>
-                <Button variant="primary" type="submit" onClick={handleDelete}>Delete account</Button>
+                <Button variant="primary" className="update-button" type="submit" onClick={handleUpdate}>Update</Button>
+                <Button variant="primary" className="delete-button" type="submit" onClick={handleDelete}>Delete account</Button>
             </Form>
 
-            <h4> Favorite documentaries: </h4>
+            <br>
+            </br>
+
+            <h4 className="white-text"> Favorite documentaries: </h4>
 
         </Fragment>
     )

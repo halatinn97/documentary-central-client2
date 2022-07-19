@@ -24,7 +24,7 @@ export function Menubar({ user }) {
 
     return (
         <Navbar bg="light" expand="lg">
-            <Container fluid className="navbar">
+            <Container fluid className="navbar-container">
                 <Navbar.Brand>Documentary-Central</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
@@ -57,7 +57,7 @@ export function Menubar({ user }) {
                     </Nav>
                     <Form className="d-flex">
                         {isAuth() && (
-                            <FormControl
+                            <FormControl className="search-box"
                                 type="search"
                                 placeholder="Search"
                                 className="me-2"
