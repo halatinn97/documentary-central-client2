@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, NavDropdown, Container, Form, Button, Nav, FormControl } from 'react-bootstrap'
 import './navbar.scss';
-
+import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input';
 
 
 export function Menubar({ user }) {
@@ -54,19 +54,11 @@ export function Menubar({ user }) {
                                 <NavDropdown.Item href="genre/">Genre</NavDropdown.Item>
                             </NavDropdown>
                         )}
+                        <VisibilityFilterInput />
                     </Nav>
                     <Form className="d-flex">
-                        {isAuth() && (
-                            <FormControl className="search-box"
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                            />
-                        )}
-                        {isAuth() && (
-                            <Button variant="outline-success" className="search-button">Search</Button>
-                        )}
+
+
                     </Form>
                 </Navbar.Collapse>
             </Container>
