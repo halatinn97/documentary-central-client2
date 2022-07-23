@@ -11,7 +11,6 @@ import './index.scss';
 
 const store = createStore(DocumentariesApp, devToolsEnhancer());
 
-
 class DocumentaryCentralApplication extends React.Component {
     render() {
         return (
