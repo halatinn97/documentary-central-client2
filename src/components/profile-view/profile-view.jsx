@@ -2,17 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { Form, Button, Card } from 'react-bootstrap';
 import './profile-view.scss';
 import axios from 'axios';
+import { Fragment, Row, Col, Container } from 'react';
+import { DocumentaryCard } from '../documentary-card/documentary-card';
+import moment from 'moment';
 import { Link } from 'react-router-dom';
-import { Fragment } from 'react';
-import { FavoriteDocumentaries } from '../favorite-view/favorite-view';
 
 
-export function ProfileView() {
+
+export function ProfileView({ documentaries }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [birthday, setBirthday] = useState('');
     const [email, setEmail] = useState('');
-    const [favoriteDocumentary, setfavoriteDocumentary] = useState(['']);
+    const [favoriteDocumentaries, setfavoriteDocumentaries] = useState([]);
 
     const [usernameErr, setUsernameErr] = useState('');
     const [passwordErr, setPasswordErr] = useState('');
@@ -51,18 +53,15 @@ export function ProfileView() {
 
     //Show user profile
     const getUser = () => {
-        const token = localStorage.getItem('token');
-        const user = localStorage.getItem('user');
         axios
             .get(`https://documentary-central.herokuapp.com/users/${user}`, {
                 headers: { Authorization: `Bearer ${token}` }
             })
             .then((response) => {
                 setUsername(response.data.Username);
-                setUser(response.data)
                 setEmail(response.data.Email);
                 setBirthday(response.data.Birthday);
-                setfavoriteDocumentary(response.data.favoriteDocumentary);
+                setfavoriteDocumentaries(response.data.favoriteDocumentaries);
                 console.log(response);
             })
             .catch(function (error) {
@@ -102,7 +101,29 @@ export function ProfileView() {
         }
     }
 
-    /*Add docu to favorites....
+    //Show favorite documentaries
+
+    const showFavorites = () => {
+        console.log(documentaries)
+        if (documentaries.length + 0) {
+            return (
+                <Row className="justify-content-md-center">
+                    {favoriteDocumentaries.length === 0 ? (
+                        <h5>Add your favorite documentaries to see them here</h5>
+                    ) : (
+                            favoriteDocumentaries.map((documentaryId, i) => (
+                                <Col key={`${i}-${documentaryId}`}>
+                                    <DocumentaryCard documentary={documentary.find((documentary) => documentary._id == documentaryId)} />
+                                </Col>
+                            ))
+                        )}
+                </Row>
+            );
+        }
+    };
+
+
+
 
     //Remove docu from favorites
     const removeFav = () => {
@@ -111,13 +132,16 @@ export function ProfileView() {
         })
             .then(() => {
                 alert('The documentary has been deleted from your favorites list.')
-                window.open('/', '_self');
+                window.open(`/users/${user}`, '_self');
             })
             .catch(error => {
                 console.log(error)
             });
     }
-    */
+
+
+
+
 
 
 
@@ -140,79 +164,82 @@ export function ProfileView() {
     }
 
 
-
     return (
+        <Container className="profile-view">
 
-        <Fragment>
-            <h4 className="white-text"> Current profile information: </h4>
-            <Card text='dark' className="user-form">
-                <Card.Body>
-                    <Card.Text>Username: {username}</Card.Text>
-                    <Card.Text>Email: {email}</Card.Text>
-                    <Card.Text>Birthday: {birthday}</Card.Text>
-                    <Card.Text>Password: {password}</Card.Text>
 
-                </Card.Body>
-            </Card>
+            <Fragment>
+                <h4 className="white-text"> Current profile information: </h4>
+                <Card text='dark' className="user-form">
+                    <Card.Body>
+                        <Card.Text>Username: {username}</Card.Text>
+                        <Card.Text>Email: {email}</Card.Text>
+                        <Card.Text>Birthday: {moment(birthday).format('DD/MM/YYYY')}</Card.Text>
 
-            <br>
-            </br>
+                    </Card.Body>
+                </Card>
 
-            <h4 className="white-text"> Edit profile information: </h4>
-            <Form className="profile-form">
-                <Form.Group className="mb-3" controlId="username">
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Enter username"
-                        onChange={(e) => setUsername(e.target.value)}
-                        value={username}
-                    />
-                    {usernameErr && <p>{usernameErr}</p>}
+                <br>
+                </br>
 
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="email">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control
-                        type="email"
-                        placeholder="Enter email"
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
-                    />
-                    {emailErr && <p>{emailErr}</p>}
-                    <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
+                <h4 className="white-text"> Edit profile information: </h4>
+                <Form className="profile-form">
+                    <Form.Group className="mb-3" controlId="username">
+                        <Form.Label>Username</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Enter username"
+                            onChange={(e) => setUsername(e.target.value)}
+                            value={username}
+                        />
+                        {usernameErr && <p>{usernameErr}</p>}
+
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="email">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control
+                            type="email"
+                            placeholder="Enter email"
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email}
+                        />
+                        {emailErr && <p>{emailErr}</p>}
+                        <Form.Text className="text-muted">
+                            We'll never share your email with anyone else.
       </Form.Text>
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="birthday">
-                    <Form.Label>Birthday</Form.Label>
-                    <Form.Control
-                        type="date"
-                        placeholder="Enter birth date"
-                        onChange={(e) => setBirthday(e.target.value)}
-                        value={birthday}
-                    />
-                </Form.Group>
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="birthday">
+                        <Form.Label>Birthday</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Enter birth date - DD/MM/YYYY"
+                            onChange={(e) => setBirthday(e.target.value)}
+                            value={moment(birthday).format('DD/MM/YYYY')}
+                        />
+                    </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
-                        type="password"
-                        placeholder="Password"
-                        onChange={(e) => setPassword(e.target.value)}
-                        value={password}
-                    />
-                    {passwordErr && <p>{passwordErr}</p>}
-                </Form.Group>
-                <Button variant="primary" className="update-button" type="submit" onClick={handleUpdate}>Update</Button>
-                <Button variant="primary" className="delete-button" type="submit" onClick={handleDelete}>Delete account</Button>
-            </Form>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control
+                            type="password"
+                            placeholder="Password"
+                            onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                        />
+                        {passwordErr && <p>{passwordErr}</p>}
+                    </Form.Group>
+                    <Button variant="primary" className="update-button" type="submit" onClick={handleUpdate}>Update</Button>
+                    <Button variant="primary" className="delete-button" onClick={handleDelete}>Delete account</Button>
+                </Form>
 
-            <br>
-            </br>
+                <br>
+                </br>
 
-            <h4 className="white-text"> Favorite documentaries: </h4>
+                <h4 className="white-text"> Favorite documentaries: </h4>
+                {showFavorites()}
+                <Button variant="primary" className="remove-button" onClick={removeFav}>Remove favorite</Button>
 
-        </Fragment>
+            </Fragment >
+        </Container>
     )
 }

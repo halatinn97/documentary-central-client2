@@ -16,7 +16,7 @@ export class DocumentaryCard extends React.Component {
 
         return (
             <Container className="documentary-card" onClick={() => imageClick()} >
-                <Card>
+                <Card className="documentary-card-style mt-20 mb-1">
                     <Card.Img className="card-poster" variant="top" src={documentary.ImagePath} />
                     <Card.Body>
                         <Card.Title>{documentary.Title}</Card.Title>
@@ -29,7 +29,7 @@ export class DocumentaryCard extends React.Component {
                         </Link>
                     </Card.Body>
                 </Card>
-            </Container>
+            </Container >
         );
     }
 }
