@@ -4,7 +4,6 @@ import './profile-view.scss';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Fragment } from 'react';
-import { FavoriteDocumentaries } from '../favorite-view/favorite-view';
 
 
 export function ProfileView() {
