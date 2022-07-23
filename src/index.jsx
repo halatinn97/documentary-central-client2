@@ -1,6 +1,6 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom/client';
-import MainView from './components/main-view/main-view';
+import { MainView } from './components/main-view/main-view';
 import { Container } from 'react-bootstrap/Container';
 /*import ReactDOM from 'react-dom';*/
 import { legacy_createStore as createStore } from 'redux';
