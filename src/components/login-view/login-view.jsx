@@ -4,8 +4,14 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import './login-view.scss';
 import { Link } from 'react-router-dom';
+import { setUser, validateInput } from '../../actions/actions';
+import { connect } from 'react-redux';
 
-
+const mapStateToProps = (state) => {
+    return {
+        user: state.user,
+    };
+};
 
 export function LoginView(props) {
     const [username, setUsername] = useState('');
@@ -82,3 +88,5 @@ LoginView.propTypes = {
     }),
     onLoggedIn: PropTypes.func.isRequired,
 };
+
+export default connect(mapStateToProps, { setUser, validateInput })(LoginView);
