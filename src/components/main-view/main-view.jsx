@@ -3,26 +3,25 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
-import { DocumentaryCard } from '../documentary-card/documentary-card';
 import { DocumentaryView } from '../documentary-view/documentary-view';
 import { GenreView } from '../genre-view/genre-view';
 import { PersonalityView } from '../personality-view/personality-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { Menubar } from '../navbar/navbar';
 import { Row, Col } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { setDocumentaries } from '../../actions/actions';
+import DocumentariesList from '../documentaries-list/documentaries-list';
 import './main-view.scss';
 
 
 
-export class MainView extends React.Component {
+class MainView extends React.Component {
 
     constructor() {
         super();
         this.state = {
-            documentaries: [],
-            selectedDocumentary: null,
             user: null,
-            registered: null
         };
     }
 
@@ -41,11 +40,13 @@ export class MainView extends React.Component {
         });
     }
 
+    /*
     onRegistered(registered) {
         this.setState({
             registered
         });
     }
+    */
 
     onLoggedIn(authData) {
         console.log(authData);
@@ -71,9 +72,7 @@ export class MainView extends React.Component {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then(response => {
-                this.setState({
-                    documentaries: response.data
-                });
+                this.props.setDocumentaries(response.data);
             })
             .catch(function (error) {
                 console.log(error);
@@ -81,7 +80,8 @@ export class MainView extends React.Component {
     }
 
     render() {
-        const { documentaries, user } = this.state;
+        let { documentaries } = this.props;
+        let { user } = this.state;
 
         return (
             <Router>
@@ -92,11 +92,7 @@ export class MainView extends React.Component {
                             <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                         </Col>
                         if (documentaries.length === 0) return <div className="main-view" />;
-                        return documentaries.map(documentary => (
-                            <Col md={3} key={documentary._id}>
-                                <DocumentaryCard documentary={documentary} />
-                            </Col>
-                        ))
+                        return <DocumentariesList documentaries={documentaries} />
                     }} />
                     <Route path="/register" render={() => {
                         if (user) return <Redirect to="/" />
@@ -139,3 +135,12 @@ export class MainView extends React.Component {
         );
     }
 }
+
+let mapStateToProps = state => {
+    return {
+        documentaries: state.documentaries,
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps, { setDocumentaries })(MainView);
