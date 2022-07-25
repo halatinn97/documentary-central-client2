@@ -24,9 +24,9 @@ export class DocumentaryCard extends React.Component {
                         <Link to={`/documentaries/${documentary._id}`}>
                             <Button variant="link">Open</Button>
                         </Link>
-                        <Link to={`users/${user}/documentaries/${documentary._id}`}>
+                        {/*<Link to={`users/${user}/documentaries/${documentary._id}`}>
                             <Button variant="link">Add to 💙</Button>
-                        </Link>
+                        </Link>*/}
                     </Card.Body>
                 </Card>
             </Container>
