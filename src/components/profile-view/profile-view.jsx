@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import { Form, Button, Card } from 'react-bootstrap';
 import './profile-view.scss';
 import axios from 'axios';
-import { Fragment, Row, Col, Container } from 'react';
+import { Row, Col, Container } from 'react-bootstrap';
 import { DocumentaryCard } from '../documentary-card/documentary-card';
 import moment from 'moment';
-import { Link } from 'react-router-dom';
 
 
 export function ProfileView({ documentaries }) {
@@ -57,10 +56,11 @@ export function ProfileView({ documentaries }) {
                 headers: { Authorization: `Bearer ${token}` }
             })
             .then((response) => {
+                console.log('Hello', response.data)
                 setUsername(response.data.Username);
                 setEmail(response.data.Email);
                 setBirthday(response.data.Birthday);
-                setfavoriteDocumentaries(response.data.favoriteDocumentaries);
+                setfavoriteDocumentaries(response.data.FavoriteDocumentaries);
                 console.log(response);
             })
             .catch(function (error) {
@@ -103,8 +103,8 @@ export function ProfileView({ documentaries }) {
     //Show favorite documentaries
 
     const showFavorites = () => {
-        console.log(documentaries)
-        if (documentaries.length + 0) {
+        console.log(favoriteDocumentaries)
+        if (documentaries.length > 0) {
             return (
                 <Row className="justify-content-md-center">
                     {favoriteDocumentaries.length === 0 ? (
@@ -112,7 +112,8 @@ export function ProfileView({ documentaries }) {
                     ) : (
                             favoriteDocumentaries.map((documentaryId, i) => (
                                 <Col key={`${i}-${documentaryId}`}>
-                                    <DocumentaryCard documentary={documentary.find((documentary) => documentary._id == documentaryId)} />
+                                    <DocumentaryCard documentary={documentaries.find((documentary) => documentary._id == documentaryId)} />
+                                    <Button variant="primary" className="remove-button" onClick={() => removeFav(documentaryId)}>Remove favorite</Button>
                                 </Col>
                             ))
                         )}
@@ -125,8 +126,8 @@ export function ProfileView({ documentaries }) {
 
 
     //Remove docu from favorites
-    const removeFav = () => {
-        axios.delete(`https://documentary-central.herokuapp.com/users/${user}/documentaries/${documentary._id}`, {
+    const removeFav = (documentaryId) => {
+        axios.delete(`https://documentary-central.herokuapp.com/users/${user}/documentaries/${documentaryId}`, {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then(() => {
@@ -236,7 +237,6 @@ export function ProfileView({ documentaries }) {
 
                 <h4 className="white-text"> Favorite documentaries: </h4>
                 {showFavorites()}
-                <Button variant="primary" className="remove-button" onClick={removeFav}>Remove favorite</Button>
 
             </Fragment >
         </Container>
