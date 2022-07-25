@@ -1,7 +1,15 @@
-$background: #ebbd34;
+$background: #10032b;
 $black: #000;
 $white: #fff;
 
-body {
+
+.app-container {
     background-color: $background;
+    height: 200vh;
 }
+
+html, body {
+    margin: 0;
+    overscroll-behavior: none; 
+}
+
