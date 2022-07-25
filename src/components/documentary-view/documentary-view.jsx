@@ -11,16 +11,16 @@ import axios from 'axios';
 export class DocumentaryView extends React.Component {
 
 
-    //Remove docu from favorites
+    //Add docu to favorites
     addFav = (documentaryId) => {
         const token = localStorage.getItem('token');
         const user = localStorage.getItem('user');
 
-        axios.post(`https://documentary-central.herokuapp.com/users/${user}/documentaries/${documentaryId}`, {
+        axios.post(`https://documentary-central.herokuapp.com/users/${user}/documentaries/${documentaryId}`, {}, {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then(() => {
-                alert('The documentary has been deleted from your favorites list.')
+                alert('The documentary has been added to your favorites list.')
                 window.open(`/users/${user}`, '_self');
             })
             .catch(error => {
@@ -33,6 +33,7 @@ export class DocumentaryView extends React.Component {
     removeFav = (documentaryId) => {
         const token = localStorage.getItem('token');
         const user = localStorage.getItem('user');
+
         axios.delete(`https://documentary-central.herokuapp.com/users/${user}/documentaries/${documentaryId}`, {
             headers: { Authorization: `Bearer ${token}` }
         })
@@ -54,7 +55,7 @@ export class DocumentaryView extends React.Component {
                 <Card className="documentary-view">
                     <Card.Img
                         className="documentary-poster"
-                        img src={documentary.ImagePath}
+                        src={documentary.ImagePath}
                     />
                     <Card.Body>
                         <Row className="documentary-title">
@@ -105,20 +106,19 @@ export class DocumentaryView extends React.Component {
                                 </Link>
                             </Col>
                         </Row>
-                        <Link to={`users/${user}/documentaries/${documentary._id}`}>
-                            <Button variant="link">Add to 💙</Button>
-                        </Link>
+
+
                         <Button
                             className="add-favorites ml-2 my-2"
                             onClick={() => this.addFav(documentary._id)}
                         >
-                            Add to Favorites
+                            Add to 💙
             </Button>
                         <Button
                             className="remove-favorites ml-2"
                             onClick={() => this.removeFav(documentary._id)}
                         >
-                            Remove from Favorites
+                            Remove from 💙
             </Button>
                     </Card.Body>
                 </Card>
