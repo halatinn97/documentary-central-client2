@@ -25,7 +25,7 @@ export function Menubar({ user }) {
 
     return (
         <Navbar collapseOnSelect expand="lg" className="navbar-style d-flex" bg="lightslategray" expand="lg">
-            <Container className="navbar-container" fluid d-flex>
+            <Container className="navbar-container" fluid>
                 <Container className="logo">
                     <Navbar.Brand className="page-title">Documentary Central
                     <a href="/">
