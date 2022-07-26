@@ -1,7 +1,9 @@
 $background: #10032b;
+$yellow: #ebbd34;
 $black: #000;
 $white: #fff;
-$blue: #007bff; 
+$dark-grey: #3e434a; 
+$grey: lightslategray;
 
 
 .app-container {
@@ -16,8 +18,21 @@ $blue: #007bff;
 }
 */
 
-.btn.register-button {
-    background-color: $blue;
-    color: $white;
+
+
+.login-button, .register-button {
+    background-color: $dark-grey !important;
+    border-color: $black !important;
 }
 
+.register-button {
+    color: $white !important;
+}
+
+.button-container {
+    padding-top: 1rem;
+}
+
+.login-input {
+    width: 30rem !important;
+}

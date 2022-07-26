@@ -61,23 +61,25 @@ export function LoginView(props) {
 
 
     return (
-        <Form>
+        <Form className="d-flex justify-content-center align-items-center flex-column">
             <Form.Group controlId="formUsername">
                 <Form.Label>Username:</Form.Label>
-                <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+                <Form.Control className="login-input" type="text" onChange={e => setUsername(e.target.value)} />
                 {usernameErr && <p>{usernameErr}</p>}
             </Form.Group>
 
             <Form.Group controlId="formPassword">
                 <Form.Label>Password:</Form.Label>
-                <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
+                <Form.Control className="login-input" type="password" onChange={e => setPassword(e.target.value)} />
                 {passwordErr && <p>{passwordErr}</p>}
             </Form.Group>
-            <Button variant="primary" type="submit" onClick={handleLogin} className="login-button">Login</Button>
-            <Link to="/register">
-                <Button variant="button" className="register-button">Register</Button>
-            </Link>
-        </Form>
+            <div className="button-container">
+                <Button variant="primary" type="submit" onClick={handleLogin} className="login-button">Login</Button>
+                <Link to="/register">
+                    <Button variant="button" className="register-button">Register</Button>
+                </Link>
+            </div>
+        </Form >
     );
 }
 

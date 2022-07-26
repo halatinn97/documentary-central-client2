@@ -1,7 +1,9 @@
 $background: #10032b;
+$yellow: #ebbd34;
 $black: #000;
 $white: #fff;
-
+$blue: #007bff; 
+$grey: lightslategray;
 
 .app-container {
     height: 100vh;
@@ -10,10 +12,38 @@ $white: #fff;
 
 .documentary-card {
     position: relative;
-    transition: transform 0.2s;
 }
 
 .documentary-card:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
+
+
+.overlay {
+    position: absolute;
+    background: rgba(0,0,0,0.8);
+    /*width: 38rem;
+    height: 25rem;*/
+    transition: 0.5s ease;
+    opacity: 0;
+    bottom: 0;
+    font-size: 20px;
+    padding: 50px;
+    text-align: center;
+    color: white;
+    flex-direction: column;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.documentary-card-title, .detail-button  {
+    color: $grey !important;
+}
+
+.image-container {
+    margin: 0;
+}
+

@@ -103,17 +103,16 @@ export function ProfileView({ documentaries }) {
     //Show favorite documentaries
 
     const showFavorites = () => {
-        console.log(favoriteDocumentaries)
         if (documentaries.length > 0) {
             return (
                 <Row className="justify-content-md-center">
                     {favoriteDocumentaries.length === 0 ? (
-                        <h5>Add your favorite documentaries to see them here</h5>
+                        <h5 className="add-favorite-message">Add your favorite documentaries to see them here</h5>
                     ) : (
                             favoriteDocumentaries.map((documentaryId, i) => (
-                                <Col key={`${i}-${documentaryId}`}>
+                                <Col xs={12} md={6} lg={3} key={`${i}-${documentaryId}`}>
                                     <DocumentaryCard documentary={documentaries.find((documentary) => documentary._id == documentaryId)} />
-                                    <Button variant="primary" className="remove-button" onClick={() => removeFav(documentaryId)}>Remove favorite</Button>
+                                    <Button variant="primary" className="remove-button" onClick={() => removeFav(documentaryId)}>Remove 💙</Button>
                                 </Col>
                             ))
                         )}
@@ -169,24 +168,28 @@ export function ProfileView({ documentaries }) {
 
 
             <Fragment>
-                <h4 className="white-text"> Current profile information: </h4>
                 <Card text='dark' className="user-form">
-                    <Card.Body>
-                        <Card.Text>Username: {username}</Card.Text>
-                        <Card.Text>Email: {email}</Card.Text>
-                        <Card.Text>Birthday: {moment(birthday).format('DD/MM/YYYY')}</Card.Text>
-
+                    <Card.Header className="header-title">Current profile information:</Card.Header>
+                    <Card.Body className="current-profile">
+                        <Card.Subtitle>Username: </Card.Subtitle>
+                        <Card.Text className="sub-title"> {username}</Card.Text>
+                        <Card.Subtitle>Email: </Card.Subtitle>
+                        <Card.Text className="sub-title"> {email}</Card.Text>
+                        <Card.Subtitle>Birthday: </Card.Subtitle>
+                        <Card.Text className="sub-title"> {moment(birthday).format('DD/MM/YYYY')}</Card.Text>
                     </Card.Body>
                 </Card>
-
                 <br>
                 </br>
-
-                <h4 className="white-text"> Edit profile information: </h4>
-                <Form className="profile-form">
+                <br>
+                </br>
+                <Form fluid className="profile-form">
+                    <h4 className="header-title"> Edit profile information: </h4>
+                    <br>
+                    </br>
                     <Form.Group className="mb-3" controlId="username">
-                        <Form.Label>Username</Form.Label>
-                        <Form.Control
+                        <Form.Label className="form-label-style">Username</Form.Label>
+                        <Form.Control className="profile-input"
                             type="text"
                             placeholder="Enter username"
                             onChange={(e) => setUsername(e.target.value)}
@@ -196,8 +199,8 @@ export function ProfileView({ documentaries }) {
 
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="email">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control
+                        <Form.Label className="form-label-style">Email</Form.Label>
+                        <Form.Control className="profile-input"
                             type="email"
                             placeholder="Enter email"
                             onChange={(e) => setEmail(e.target.value)}
@@ -209,8 +212,8 @@ export function ProfileView({ documentaries }) {
       </Form.Text>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="birthday">
-                        <Form.Label>Birthday</Form.Label>
-                        <Form.Control
+                        <Form.Label className="form-label-style">Birthday</Form.Label>
+                        <Form.Control className="profile-input"
                             type="text"
                             placeholder="Enter birth date - DD/MM/YYYY"
                             onChange={(e) => setBirthday(e.target.value)}
@@ -219,8 +222,8 @@ export function ProfileView({ documentaries }) {
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control
+                        <Form.Label className="form-label-style">Password</Form.Label>
+                        <Form.Control className="profile-input"
                             type="password"
                             placeholder="Password"
                             onChange={(e) => setPassword(e.target.value)}
@@ -228,17 +231,35 @@ export function ProfileView({ documentaries }) {
                         />
                         {passwordErr && <p>{passwordErr}</p>}
                     </Form.Group>
-                    <Button variant="primary" className="update-button" type="submit" onClick={handleUpdate}>Update</Button>
+                    <br>
+                    </br>
+                    <Button variant="primary" className="update-button" type="submit" onClick={handleUpdate}>Update account</Button>
                     <Button variant="primary" className="delete-button" onClick={handleDelete}>Delete account</Button>
                 </Form>
 
                 <br>
                 </br>
+                <br>
+                </br>
 
-                <h4 className="white-text"> Favorite documentaries: </h4>
-                {showFavorites()}
+                <Container fluid className="favorite-container">
+                    <h4 className="favorite-title"> Your top picks: </h4>
+                    <br>
+                    </br>
+                    {showFavorites()}
+                </Container>
 
             </Fragment >
-        </Container>
+        </Container >
     )
 }
+
+/*
+const mapStateToProps = (state) => {
+    return {
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps, { removeFav })(ProfileView);
+*/

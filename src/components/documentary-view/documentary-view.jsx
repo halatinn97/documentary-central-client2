@@ -11,6 +11,7 @@ import axios from 'axios';
 export class DocumentaryView extends React.Component {
 
 
+
     //Add docu to favorites
     addFav = (documentaryId) => {
         const token = localStorage.getItem('token');
@@ -107,19 +108,20 @@ export class DocumentaryView extends React.Component {
                             </Col>
                         </Row>
 
-
-                        <Button
-                            className="add-favorites ml-2 my-2"
-                            onClick={() => this.addFav(documentary._id)}
-                        >
-                            Add to 💙
-            </Button>
-                        <Button
-                            className="remove-favorites ml-2"
-                            onClick={() => this.removeFav(documentary._id)}
-                        >
-                            Remove from 💙
-            </Button>
+                        <div className="favorite-buttons">
+                            <Button
+                                className="add-favorites ml-2 my-2"
+                                onClick={() => this.addFav(documentary._id)}
+                            >
+                                Add to 💙
+                            </Button>
+                            <Button
+                                className="remove-favorites ml-2"
+                                onClick={() => this.removeFav(documentary._id)}
+                            >
+                                Remove from 💙
+                        </Button>
+                        </div>
                     </Card.Body>
                 </Card>
             </Container>

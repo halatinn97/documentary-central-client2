@@ -2,7 +2,9 @@ $background: #10032b;
 $yellow: #ebbd34;
 $black: #000;
 $white: #fff;
-$blue: #007bff; 
+$dark-grey: #3e434a; 
+$grey: lightslategray;
+
 
 
 .app-container {
@@ -11,10 +13,52 @@ $blue: #007bff;
 }
 
 
-.white-text, .form-label {
+.white-text, .form-label, .add-favorite-message {
     color: $white;
 }
 
+
+
 .update-button {
     margin-right: 5px;
+}
+
+
+.header-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.profile-input {
+    background-color: $grey !important;
+}
+
+.profile-form {
+    background: $white;
+    padding: 1rem;
+}
+
+.form-label-style {
+    color: $black !important;
+}
+
+.favorite-title {
+    color: $white;
+}
+ 
+.sub-title {
+    font-weight: 300;
+}
+
+.update-button, .delete-button, .remove-button {
+    background-color: $dark-grey !important;
+    border-color: $black !important;
+}
+
+.current-profile.card-body {
+    padding: 20px;
+}
+
+.favorite-title {
+    text-align: center;
 }

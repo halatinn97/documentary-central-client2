@@ -3,6 +3,7 @@ $yellow: #ebbd34;
 $black: #000;
 $white: #fff;
 $blue: #007bff; 
+$grey: lightslategray;
 
 
 .app-container {
@@ -10,18 +11,76 @@ $blue: #007bff;
     background-color: $background;
 }
 
-/*
-.btn-primary.login-button {
-    background-color: yellow;
-}
-*/
 
-.btn.search-button {
-    background-color: $blue;
-    color: $white;
+.page-title {
+    font-weight: 700;
+    font-size: 1.5rem !important;
 }
 
-.search-box {
+.nav-link{
+    display: flex !important;
+}
+
+.container-fluid {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.navbar-content {
+    padding-top: 10px;
+}
+
+.navbar-collapse {
+    justify-content: flex-end !important;
+}
+
+.filter-search.form-control {
+    width: 20rem !important;
+}
+
+.logo {
     display: flex;
-    justify-content: flex-end;
 }
+
+.brand-logo {
+    padding-left: 1rem;
+    width: 4.5rem;
+    height: 3.5rem;
+}
+
+.nav-links {
+    font-weight: 700 !important;
+    font-size: 1.4rem !important;
+}
+
+.nav-links:hover {
+    border-bottom: 2px solid $white;
+}
+
+nav {
+    padding: 1rem !important;
+    background-color: $grey !important;
+    border-bottom: 1px solid white !important;
+}
+
+button.nav-links.btn.btn-link {
+    text-decoration: none;
+    color: rgba(0,0,0,.5);
+}
+
+.navbar-container {
+    text-align-last: right;
+}
+
+@media all and (min-width: 1024px) and (max-width: 1400px) {
+    html {
+        background-color: $background;
+    }
+    .navbar-style .d-flex{
+        background-color: $grey;
+        width: 100% !important;
+    }
+    .filter-search.form-control {
+        width: 5rem !important;
+    }
+  }

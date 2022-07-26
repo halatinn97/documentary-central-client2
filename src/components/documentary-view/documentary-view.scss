@@ -1,6 +1,10 @@
 $background: #10032b;
+$yellow: #ebbd34;
 $black: #000;
 $white: #fff;
+$dark-grey: #3e434a; 
+$grey: lightslategray;
+
 
 
 .app-container {
@@ -8,3 +12,11 @@ $white: #fff;
     background-color: $background;
 }
 
+.add-favorites, .remove-favorites {
+    background-color: $dark-grey !important;
+    border-color: $black !important;
+}
+
+.favorite-buttons {
+    display: grid;
+}
