@@ -20,9 +20,9 @@ Visit website here: https://documentary-central.herokuapp.com
 
 The website works in all major browsers: 
 
--Chrome
--Firefox
--Safari
--Microsoft Edge
+- Chrome
+- Firefox
+- Safari
+- Microsoft Edge
 
 ### Dependencies:
