@@ -242,7 +242,7 @@ export function ProfileView({ documentaries }) {
                 <br>
                 </br>
 
-                <Container fluid className="favorite-container">
+                <Container className="favorite-container">
                     <h4 className="favorite-title"> Your top picks: </h4>
                     <br>
                     </br>
