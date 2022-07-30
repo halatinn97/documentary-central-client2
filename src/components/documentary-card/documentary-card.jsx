@@ -8,16 +8,16 @@ import { Link } from "react-router-dom";
 export class DocumentaryCard extends React.Component {
 
     render() {
-        const imageClick = () => {
+        /*const imageClick = () => {
             window.open(`/documentaries/${documentary._id}`, '_self')
-        }
+    }*/
 
 
 
         const { documentary, user } = this.props;
 
         return (
-            <Container fluid id="documentary-card-id" className="fluid documentary-card d-flex" onClick={() => imageClick()} >
+            <Container fluid id="documentary-card-id" className="fluid documentary-card d-flex" /*onClick={() => imageClick()}*/ >
                 <div className="card h-100 image-container d-flex">
                     <Card className="card-color" /*style={{ width: '30rem'/*, height: '45rem'  }}*/>
                         <Card.Img /*style={{ width: '30rem', height: '45rem' }}*/ className="card-poster" variant="top" src={documentary.ImagePath} />
