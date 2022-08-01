@@ -3,6 +3,7 @@ $black: #000;
 $white: #fff;
 $dark-grey: #3e434a; 
 $grey: lightslategray;
+$gold: #b59507;
 
 
 .app-container {
@@ -17,15 +18,17 @@ $grey: lightslategray;
 }
 */
 
-
-
 .login-button, .register-button {
-    background-color: $dark-grey !important;
     border-color: $black !important;
+}
+
+.login-button {
+    background-color: $gold !important;
 }
 
 .register-button {
     color: $white !important;
+    background-color: $dark-grey !important;
 }
 
 .button-container {
@@ -34,4 +37,8 @@ $grey: lightslategray;
 
 .login-input {
     width: 30rem !important;
+}
+
+.main-view-style {
+    padding-top: 50px;
 }

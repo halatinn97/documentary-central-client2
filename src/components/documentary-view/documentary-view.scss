@@ -11,6 +11,10 @@ $grey: lightslategray;
     background-color: $background;
 }
 
+.main-view {
+    padding-top: 50px;
+
+}
 .add-favorites, .remove-favorites {
     background-color: $dark-grey !important;
     border-color: $black !important;

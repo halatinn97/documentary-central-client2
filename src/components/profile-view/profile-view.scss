@@ -3,7 +3,11 @@ $black: #000;
 $white: #fff;
 $dark-grey: #3e434a; 
 $grey: lightslategray;
+$red: #910a00;
 
+.main-view-style {
+    padding-top: 50px;
+}
 
 
 .app-container {
@@ -49,8 +53,13 @@ $grey: lightslategray;
     font-weight: 300;
 }
 
-.update-button, .delete-button, .remove-button {
+.update-button, .remove-button {
     background-color: $dark-grey !important;
+    border-color: $black !important;
+}
+
+.delete-button {
+    background-color: $red !important;
     border-color: $black !important;
 }
 

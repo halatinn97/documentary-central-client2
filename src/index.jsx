@@ -17,7 +17,7 @@ class DocumentaryCentralApplication extends React.Component {
 
             <Provider store={store}>
                 <Container fluid>
-                    <MainView />
+                    <MainView className="main-view-style" />
                 </Container>
             </Provider>
 
