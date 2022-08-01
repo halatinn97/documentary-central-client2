@@ -20,22 +20,22 @@ $grey: lightslategray;
 
 .documentary-card:hover {
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 
 .overlay {
     position: absolute;
-    background: rgba(0,0,0,0.8);
+    background: rgba(245, 245, 245, 0.8);
     /*width: 38rem;
     height: 25rem;*/
     transition: 0.5s ease;
     opacity: 0;
-    bottom: 0;
+    top: 0;
     font-size: 1rem;
     padding: 1%;
     text-align: center;
-    color: white;
+    color: $black;
     flex-direction: column;
 }
 
@@ -49,5 +49,12 @@ $grey: lightslategray;
 
 .image-container {
     margin: 0;
+    position: relative;
 }
 
+
+.card-img-top {
+    width: 100%;
+    object-fit: fill;
+    height: 40em !important;
+}
