@@ -14,8 +14,23 @@ It will include several interface views built using the React library that will 
 
 ### How to get the project running:
 
-Visit website here: https://documentary-central.herokuapp.com
+Visit website here: https://main--jolly-bonbon-ab0ec7.netlify.app
 
 The website works in all major browsers: Chrome, Firefox, Safari, Microsoft Edge
 
 ### Dependencies:
+
+    "dependencies": 
+        "axios": "^0.27.2",
+        "moment": "^2.29.4",
+        "react": "^18.2.0",
+        "react-bootstrap": "^2.4.0",
+        "react-dom": "^18.2.0",
+        "react-moment": "^1.1.2",
+        "react-redux": "^8.0.2",
+        "react-router-dom": "^5.3.0",
+        "redux": "^4.2.0",
+        "redux-devtools-extension": "^2.13.9"
+
+
+
