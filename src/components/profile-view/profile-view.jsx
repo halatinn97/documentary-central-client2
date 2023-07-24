@@ -52,7 +52,7 @@ export function ProfileView({ documentaries }) {
     //Show user profile
     const getUser = () => {
         axios
-            .get(`https://documentary-central.herokuapp.com/users/${user}`, {
+            .get(`https://documentary-central-production.up.railway.app/users/${user}`, {
                 headers: { Authorization: `Bearer ${token}` }
             })
             .then((response) => {
@@ -109,13 +109,13 @@ export function ProfileView({ documentaries }) {
                     {favoriteDocumentaries.length === 0 ? (
                         <h5 className="add-favorite-message">Add your favorite documentaries to see them here</h5>
                     ) : (
-                            favoriteDocumentaries.map((documentaryId, i) => (
-                                <Col xs={12} md={6} lg={3} key={`${i}-${documentaryId}`}>
-                                    <DocumentaryCard documentary={documentaries.find((documentary) => documentary._id == documentaryId)} />
-                                    <Button variant="primary" className="remove-button" onClick={() => removeFav(documentaryId)}>Remove 💙</Button>
-                                </Col>
-                            ))
-                        )}
+                        favoriteDocumentaries.map((documentaryId, i) => (
+                            <Col xs={12} md={6} lg={3} key={`${i}-${documentaryId}`}>
+                                <DocumentaryCard documentary={documentaries.find((documentary) => documentary._id == documentaryId)} />
+                                <Button variant="primary" className="remove-button" onClick={() => removeFav(documentaryId)}>Remove 💙</Button>
+                            </Col>
+                        ))
+                    )}
                 </Row>
             );
         }
@@ -209,7 +209,7 @@ export function ProfileView({ documentaries }) {
                         {emailErr && <p>{emailErr}</p>}
                         <Form.Text className="text-muted">
                             We'll never share your email with anyone else.
-      </Form.Text>
+                        </Form.Text>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="birthday">
                         <Form.Label className="form-label-style">Birthday</Form.Label>

@@ -52,7 +52,7 @@ export function RegistrationView(props) {
         const isReq = validate();
         if (isReq) {
 
-            axios.post('https://documentary-central.herokuapp.com/users', {
+            axios.post('https://documentary-central-production.up.railway.app/users', {
                 Username: username,
                 Password: password,
                 Email: email,

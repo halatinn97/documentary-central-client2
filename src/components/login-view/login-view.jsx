@@ -45,7 +45,7 @@ export function LoginView(props) {
         const isReq = validate();
         if (isReq) {
             axios
-                .post('https://documentary-central.herokuapp.com/login', {
+                .post('https://documentary-central-production.up.railway.app/login', {
                     Username: username,
                     Password: password,
                 })

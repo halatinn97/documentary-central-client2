@@ -17,7 +17,7 @@ export class DocumentaryView extends React.Component {
         const token = localStorage.getItem('token');
         const user = localStorage.getItem('user');
 
-        axios.post(`https://documentary-central.herokuapp.com/users/${user}/documentaries/${documentaryId}`, {}, {
+        axios.post(`https://documentary-central-production.up.railway.app/users/${user}/documentaries/${documentaryId}`, {}, {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then(() => {
@@ -35,7 +35,7 @@ export class DocumentaryView extends React.Component {
         const token = localStorage.getItem('token');
         const user = localStorage.getItem('user');
 
-        axios.delete(`https://documentary-central.herokuapp.com/users/${user}/documentaries/${documentaryId}`, {
+        axios.delete(`https://documentary-central-production.up.railway.app/users/${user}/documentaries/${documentaryId}`, {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then(() => {
@@ -63,7 +63,7 @@ export class DocumentaryView extends React.Component {
                             <Col>
                                 <Card.Subtitle className="label">
                                     Title:
-                            </Card.Subtitle>
+                                </Card.Subtitle>
                             </Col>
                             <Col className="value">{documentary.Title}</Col>
                         </Row>
@@ -79,7 +79,7 @@ export class DocumentaryView extends React.Component {
                             <Col>
                                 <Card.Subtitle className="label">
                                     Release year:
-                            </Card.Subtitle>
+                                </Card.Subtitle>
                             </Col>
                             <Col className="value">{documentary.ReleaseYear}</Col>
                         </Row>
@@ -87,7 +87,7 @@ export class DocumentaryView extends React.Component {
                             <Col>
                                 <Card.Subtitle className="label">
                                     Genre:
-                            </Card.Subtitle>
+                                </Card.Subtitle>
                             </Col>
                             <Col className="value">
                                 <Link to={`/genres/${documentary.Genre.Name}`}>
@@ -120,7 +120,7 @@ export class DocumentaryView extends React.Component {
                                 onClick={() => this.removeFav(documentary._id)}
                             >
                                 Remove from 💙
-                        </Button>
+                            </Button>
                         </div>
                     </Card.Body>
                 </Card>

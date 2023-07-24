@@ -1,6 +1,101 @@
+@import "https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap";
 .app-container {
   height: 100vh;
   background-color: #ebbd34;
+}
+
+.app-container {
+  height: 100%;
+  background-color: #10032b;
+}
+
+.login-button, .register-button {
+  border-color: #000 !important;
+}
+
+.login-button {
+  background-color: #b59507 !important;
+}
+
+.register-button {
+  color: #fff !important;
+  background-color: #3e434a !important;
+}
+
+.button-container {
+  padding-top: 1rem;
+}
+
+.login-input {
+  width: 30rem !important;
+}
+
+.main-view-style {
+  padding-top: 50px;
+}
+
+.app-container {
+  height: 100vh;
+  background-color: #ebbd34;
+}
+
+
+
+
+
+
+
+.app-container {
+  height: 100vh;
+  background-color: #10032b;
+}
+
+.main-view {
+  padding-top: 50px;
+}
+
+.documentary-card {
+  position: relative;
+}
+
+.documentary-card:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.overlay {
+  opacity: 0;
+  text-align: center;
+  color: #fff;
+  background: #000c;
+  flex-direction: column;
+  padding: 1%;
+  font-size: 1rem;
+  transition: all .5s;
+  position: absolute;
+  bottom: 0;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.documentary-card-title, .detail-button {
+  color: #789 !important;
+}
+
+.image-container {
+  margin: 0;
+}
+
+.app-container {
+  height: 100vh;
+  background-color: #ebbd34;
+}
+
+.btn.search-button {
+  color: #fff;
+  background-color: #007bff;
 }
 
 .app-container {
@@ -9,22 +104,20 @@
 }
 
 .app-container {
-  height: 100vh;
-  background-color: #ebbd34;
+  height: 200vh;
+  background-color: #10032b;
+  font-family: Monomaniac One, sans-serif;
 }
 
-.app-container {
-  height: 100vh;
-  background-color: #ebbd34;
+html, body, h1 {
+  overscroll-behavior: none;
+  margin: 0;
+  font-family: Monomaniac One, sans-serif;
 }
 
-.app-container {
-  height: 100vh;
-  background-color: #ebbd34;
-}
-
-body {
-  background-color: #ebbd34;
+.main-view {
+  padding-top: 50px;
+  font-family: Monomaniac One, sans-serif;
 }
 
 /*# sourceMappingURL=index.3bb28fe2.css.map */

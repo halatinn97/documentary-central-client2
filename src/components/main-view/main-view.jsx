@@ -68,7 +68,7 @@ class MainView extends React.Component {
     }
 
     getDocumentaries(token) {
-        axios.get('https://documentary-central.herokuapp.com/documentaries', {
+        axios.get('https://documentary-central-production.up.railway.app/documentaries', {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then(response => {
