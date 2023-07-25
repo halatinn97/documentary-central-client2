@@ -7,7 +7,7 @@ import { legacy_createStore as createStore } from 'redux';
 import { Provider } from 'react-redux';
 import DocumentariesApp from './reducers/reducers';
 import { devToolsEnhancer } from 'redux-devtools-extension';
-import './index.scss';
+import './styles/base.scss';
 
 const store = createStore(DocumentariesApp, devToolsEnhancer());
 
