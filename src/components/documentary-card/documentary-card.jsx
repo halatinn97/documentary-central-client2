@@ -19,14 +19,13 @@ export class DocumentaryCard extends React.Component {
         return (
             <Container id="documentary-card-id" className="container-fluid content-row" onClick={() => imageClick()} >
                 <div className="row">
-                    <div class="col">
+                    <div className="col">
                         <div className="card h-100">
-                            <Card className="documentary-card card h-100" /*style={{ width: '30rem'/*, height: '45rem'  }}*/>
+                            <Card className="documentary-card card h-100">
                                 <div className="image-container">
-                                    <Card.Img /*style={{ width: '30rem', height: '45rem' }}*/ /*className="documentary-card"*/ variant="top" src={documentary.ImagePath} />
+                                    <Card.Img variant="top" src={documentary.ImagePath} />
                                     <div className="overlay fluid d-flex align-items-center">
                                         <Card.Body className="documentary-card-body">
-                                            {/*<Card.Text>{documentary.Description}</Card.Text>*/}
                                             <Link to={`/documentaries/${documentary._id}`}>
                                                 <Button className="detail-button" variant="link">Click for more</Button>
                                             </Link>

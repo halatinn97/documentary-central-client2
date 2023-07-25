@@ -101,7 +101,6 @@ export function ProfileView({ documentaries }) {
     }
 
     //Show favorite documentaries
-
     const showFavorites = () => {
         if (documentaries.length > 0) {
             return (
@@ -126,7 +125,7 @@ export function ProfileView({ documentaries }) {
 
     //Remove docu from favorites
     const removeFav = (documentaryId) => {
-        axios.delete(`https://documentary-central.herokuapp.com/users/${user}/documentaries/${documentaryId}`, {
+        axios.delete(`https://documentary-central-production.up.railway.app/users/${user}/documentaries/${documentaryId}`, {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then(() => {

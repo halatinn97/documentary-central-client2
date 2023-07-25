@@ -48616,7 +48616,7 @@ DocumentaryView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","./documentary-view.scss":"lHQVo","react-router-dom":"cHIiW","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","axios":"jo6P5"}],"lHQVo":[function() {},{}],"4tuA0":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","./documentary-view.scss":"lHQVo","react-router-dom":"cHIiW","axios":"jo6P5","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lHQVo":[function() {},{}],"4tuA0":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$377f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -48953,7 +48953,7 @@ function ProfileView({ documentaries  }) {
         }, this);
     }; //Remove docu from favorites
     const removeFav = (documentaryId)=>{
-        _axios.default.delete(`https://documentary-central.herokuapp.com/users/${user}/documentaries/${documentaryId}`, {
+        _axios.default.delete(`https://documentary-central-production.up.railway.app/users/${user}/documentaries/${documentaryId}`, {
             headers: {
                 Authorization: `Bearer ${token1}`
             }
@@ -49330,7 +49330,7 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","./profile-view.scss":"eyKYH","axios":"jo6P5","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../documentary-card/documentary-card":"fWOev","moment":"jwcsj"}],"eyKYH":[function() {},{}],"fWOev":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","./profile-view.scss":"eyKYH","axios":"jo6P5","../documentary-card/documentary-card":"fWOev","moment":"jwcsj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"eyKYH":[function() {},{}],"fWOev":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8c27 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -49366,7 +49366,7 @@ class DocumentaryCard extends _react.default.Component {
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "row",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    class: "col",
+                    className: "col",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "card h-100",
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(_reactBootstrap.Card, {
@@ -49375,11 +49375,11 @@ class DocumentaryCard extends _react.default.Component {
                                 className: "image-container",
                                 children: [
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(_reactBootstrap.Card.Img, {
-                                        /*style={{ width: '30rem', height: '45rem' }}*/ /*className="documentary-card"*/ variant: "top",
+                                        variant: "top",
                                         src: documentary.ImagePath
                                     }, void 0, false, {
                                         fileName: "src/components/documentary-card/documentary-card.jsx",
-                                        lineNumber: 38,
+                                        lineNumber: 36,
                                         columnNumber: 37
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -49394,28 +49394,28 @@ class DocumentaryCard extends _react.default.Component {
                                                     children: "Click for more"
                                                 }, void 0, false, {
                                                     fileName: "src/components/documentary-card/documentary-card.jsx",
-                                                    lineNumber: 49,
+                                                    lineNumber: 40,
                                                     columnNumber: 49
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "src/components/documentary-card/documentary-card.jsx",
-                                                lineNumber: 48,
+                                                lineNumber: 39,
                                                 columnNumber: 45
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "src/components/documentary-card/documentary-card.jsx",
-                                            lineNumber: 44,
+                                            lineNumber: 38,
                                             columnNumber: 41
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "src/components/documentary-card/documentary-card.jsx",
-                                        lineNumber: 43,
+                                        lineNumber: 37,
                                         columnNumber: 37
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/documentary-card/documentary-card.jsx",
-                                lineNumber: 37,
+                                lineNumber: 35,
                                 columnNumber: 33
                             }, this)
                         }, void 0, false, {
