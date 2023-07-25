@@ -1,16 +1,19 @@
+@import '../../styles/base';
+
 $background: #10032b;
 $black: #000;
 $white: #fff;
-$dark-grey: #3e434a; 
+$dark-grey: #3e434a;
 $grey: lightslategray;
+$red: darkred;
+$gold: #b59507;
 
 
-
-.app-container {
-    height: 100vh;
-    background-color: $background;
+.submit-button {
+    background-color: $gold !important;
+    margin-top: 1em;
 }
 
-.main-view-style {
-    padding-top: 50px;
+.submit-button:hover {
+    filter: brightness(120%);
 }

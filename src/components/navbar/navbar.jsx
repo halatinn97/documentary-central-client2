@@ -27,8 +27,8 @@ export function Menubar({ user }) {
         <Navbar collapseOnSelect expand="lg" className="navbar-style d-flex" bg="lightslategray" expand="lg">
             <Container className="navbar-container">
                 <Container className="logo">
-                    <Navbar.Brand className="page-title">Documentary Central
-                    <a href="/">
+                    <Navbar.Brand className="page-title">DOCUMENTARY CENTRAL
+                        <a href="/">
                             <img src={brandLogo} className="brand-logo" width="50" height="50" alt="" />
                         </a>
                     </Navbar.Brand>
@@ -47,11 +47,6 @@ export function Menubar({ user }) {
                         {isAuth() && (
                             <Nav.Link className="nav-links" href="/">Home</Nav.Link>
                         )}
-
-                        {/*!isAuth() && (
-                            <Nav.Link href="/register">Sign-up</Nav.Link>
-                        )*/}
-
                         {isAuth() && (
                             <NavDropdown className="nav-links" title="Documentaries" id="navbarScrollingDropdown">
                                 <NavDropdown.Item href="/">Documentaries</NavDropdown.Item>

@@ -1,21 +1,7 @@
+@import '../../styles/base';
+
 $background: #10032b;
 $black: #000;
 $white: #fff;
-$dark-grey: #3e434a; 
+$dark-grey: #3e434a;
 $grey: lightslategray;
-
-
-
-.app-container {
-    background-color: $background;
-    height: 300vh;
-}
-
-html, body {
-    margin: 0;
-    overscroll-behavior: none; 
-}
-
-.main-view-style {
-    padding-top: 50px;
-}

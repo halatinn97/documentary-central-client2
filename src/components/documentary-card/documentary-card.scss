@@ -1,18 +1,13 @@
+@import '../../styles/base';
+
 $background: #10032b;
 $black: #000;
 $white: #fff;
-$blue: #007bff; 
+$blue: #007bff;
 $grey: lightslategray;
+$red: darkred;
 
-.app-container {
-    height: 100vh;
-    background-color: $background;
-}
 
-.main-view {
-    padding-top: 50px;
-
-}
 
 .documentary-card {
     position: relative;
@@ -43,7 +38,8 @@ $grey: lightslategray;
     opacity: 1;
 }
 
-.documentary-card-title, .detail-button  {
+.documentary-card-title,
+.detail-button {
     color: $grey !important;
 }
 
@@ -61,12 +57,12 @@ $grey: lightslategray;
 
 @media all and (min-width:320px) and (max-width: 1091px) {
     .card-img-top {
-      height: 20em !important;
+        height: 20em !important;
     }
-  }
+}
 
-  @media all and (min-width:1440px) and (max-width: 1600px) {
+@media all and (min-width:1440px) and (max-width: 1600px) {
     .card-img-top {
-      height: 35em !important;
+        height: 35em !important;
     }
-  }
+}

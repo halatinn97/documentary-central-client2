@@ -61,7 +61,7 @@ export function LoginView(props) {
 
 
     return (
-        <Form className="d-flex justify-content-center align-items-center flex-column">
+        <Form id="login-form" className="d-flex justify-content-center align-items-center flex-column">
             <Form.Group controlId="formUsername">
                 <Form.Label>Username:</Form.Label>
                 <Form.Control className="login-input" type="text" onChange={e => setUsername(e.target.value)} />

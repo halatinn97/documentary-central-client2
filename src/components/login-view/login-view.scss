@@ -1,22 +1,14 @@
+@import '../../styles/base';
+
 $background: #10032b;
 $black: #000;
 $white: #fff;
 $dark-grey: #3e434a;
 $grey: lightslategray;
 $gold: #b59507;
+$red: darkred;
 
 
-.app-container {
-    height: 100%;
-    background-color: $background;
-}
-
-
-/*
-.btn-primary.login-button {
-    background-color: yellow;
-}
-*/
 
 .login-button,
 .register-button {
@@ -25,11 +17,21 @@ $gold: #b59507;
 
 .login-button {
     background-color: $gold !important;
+    border: 1px solid $white !important;
+}
+
+.login-button:hover {
+    filter: brightness(120%);
 }
 
 .register-button {
     color: $white !important;
     background-color: $dark-grey !important;
+    border: 1px solid $white !important;
+}
+
+.register-button:hover {
+    filter: brightness(120%);
 }
 
 .button-container {
@@ -38,8 +40,4 @@ $gold: #b59507;
 
 .login-input {
     width: 30rem !important;
-}
-
-.main-view-style {
-    padding-top: 50px;
 }

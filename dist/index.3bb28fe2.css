@@ -1,12 +1,62 @@
 @import "https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap";
-.app-container {
-  height: 100vh;
-  background-color: #ebbd34;
+@import "https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap";
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-.app-container {
+body {
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+  background-color: #10032b !important;
+  overflow: auto !important;
+}
+
+#app-container {
+  width: 100%;
   height: 100%;
-  background-color: #10032b;
+  display: flex;
+}
+
+.submit-button {
+  margin-top: 1em;
+  background-color: #b59507 !important;
+}
+
+.submit-button:hover {
+  filter: brightness(120%);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+  background-color: #10032b !important;
+  overflow: auto !important;
+}
+
+#app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 
 .login-button, .register-button {
@@ -15,11 +65,21 @@
 
 .login-button {
   background-color: #b59507 !important;
+  border: 1px solid #fff !important;
+}
+
+.login-button:hover {
+  filter: brightness(120%);
 }
 
 .register-button {
   color: #fff !important;
   background-color: #3e434a !important;
+  border: 1px solid #fff !important;
+}
+
+.register-button:hover {
+  filter: brightness(120%);
 }
 
 .button-container {
@@ -30,28 +90,207 @@
   width: 30rem !important;
 }
 
-.main-view-style {
-  padding-top: 50px;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-.app-container {
-  height: 100vh;
-  background-color: #ebbd34;
+body {
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+  background-color: #10032b !important;
+  overflow: auto !important;
 }
 
-
-
-
-
-
-
-.app-container {
-  height: 100vh;
-  background-color: #10032b;
+#app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 
-.main-view {
-  padding-top: 50px;
+.add-favorites, .remove-favorites {
+  border-color: #000 !important;
+}
+
+.add-favorites {
+  background-color: #3e434a !important;
+}
+
+.remove-favorites {
+  background-color: #910a00 !important;
+}
+
+.favorite-buttons {
+  display: grid;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+  background-color: #10032b !important;
+  overflow: auto !important;
+}
+
+#app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+  background-color: #10032b !important;
+  overflow: auto !important;
+}
+
+#app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+  background-color: #10032b !important;
+  overflow: auto !important;
+}
+
+#app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.white-text, .form-label, .add-favorite-message {
+  color: #fff;
+}
+
+.profile-view .documentary-card img {
+  width: 100%;
+  object-fit: fill;
+  height: 20em !important;
+}
+
+.update-button {
+  margin-right: 5px;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.profile-input {
+  background-color: #789 !important;
+}
+
+.profile-form {
+  background: #fff;
+  padding: 1rem;
+}
+
+.form-label-style {
+  color: #000 !important;
+}
+
+.favorite-title {
+  color: #fff;
+}
+
+.sub-title {
+  font-weight: 300;
+}
+
+.update-button, .remove-button {
+  background-color: #fff !important;
+  border-color: #000 !important;
+}
+
+.delete-button {
+  background-color: #910a00 !important;
+  border-color: #000 !important;
+}
+
+.current-profile.card-body {
+  padding: 20px;
+}
+
+.favorite-title {
+  text-align: center;
+}
+
+@media (max-width: 1024px) and (max-height: 1380px) {
+  .profile-view .documentary-card img {
+    height: 12em !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) and (max-height: 1380px) {
+  .profile-view .documentary-card img {
+    height: 16em !important;
+  }
+}
+
+@media (min-width: 1441px) and (max-height: 1380px) {
+  .profile-view .documentary-card img {
+    height: 16em !important;
+  }
+}
+
+@media (min-width: 1600px) and (max-height: 1380px) {
+  .profile-view .documentary-card img {
+    height: 20em !important;
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+  background-color: #10032b !important;
+  overflow: auto !important;
+}
+
+#app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 
 .documentary-card {
@@ -60,20 +299,20 @@
 
 .documentary-card:hover {
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .overlay {
   opacity: 0;
   text-align: center;
-  color: #fff;
-  background: #000c;
+  color: #000;
+  background: #f5f5f5cc;
   flex-direction: column;
   padding: 1%;
   font-size: 1rem;
   transition: all .5s;
   position: absolute;
-  bottom: 0;
+  top: 0;
 }
 
 .image-container:hover .overlay {
@@ -86,38 +325,213 @@
 
 .image-container {
   margin: 0;
+  position: relative;
 }
 
-.app-container {
-  height: 100vh;
-  background-color: #ebbd34;
+.card-img-top {
+  width: 100%;
+  object-fit: fill;
+  height: 42em !important;
 }
 
-.btn.search-button {
-  color: #fff;
-  background-color: #007bff;
+@media (min-width: 320px) and (max-width: 1091px) {
+  .card-img-top {
+    height: 20em !important;
+  }
 }
 
-.app-container {
-  height: 100vh;
-  background-color: #ebbd34;
+@media (min-width: 1440px) and (max-width: 1600px) {
+  .card-img-top {
+    height: 35em !important;
+  }
 }
 
-.app-container {
-  height: 200vh;
-  background-color: #10032b;
-  font-family: Monomaniac One, sans-serif;
-}
-
-html, body, h1 {
-  overscroll-behavior: none;
+html, body {
+  height: 100%;
   margin: 0;
-  font-family: Monomaniac One, sans-serif;
+  padding: 0;
+  overflow: hidden;
 }
 
-.main-view {
-  padding-top: 50px;
-  font-family: Monomaniac One, sans-serif;
+body {
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+  background-color: #10032b !important;
+  overflow: auto !important;
+}
+
+#app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.page-title {
+  text-shadow: 2px 0 #000;
+  font-family: Rubik Glitch, cursive;
+  font-weight: 400;
+  color: #8b0000 !important;
+  font-size: 2rem !important;
+}
+
+.nav-links {
+  display: flex !important;
+}
+
+.container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.navbar-content {
+  padding-top: 10px;
+}
+
+button.navbar-toggler {
+  margin-left: 95%;
+}
+
+.navbar-collapse.show .navbar-nav {
+  flex-flow: wrap;
+  justify-content: space-between;
+}
+
+.navbar-collapse.show button.navbar-toggler.collapsed {
+  margin-left: 95%;
+}
+
+.navbar-collapse.show input.filter-search.form-control {
+  margin-left: 25%;
+}
+
+.filter-search.form-control {
+  width: 20rem !important;
+}
+
+.logo {
+  display: flex;
+}
+
+.brand-logo {
+  width: 4.5rem;
+  height: 3.5rem;
+  padding-left: 1rem;
+}
+
+.nav-links {
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+}
+
+.nav-links:hover {
+  border-bottom: 2px solid #fff;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #789 !important;
+  border-bottom: 1px solid #fff !important;
+  margin-bottom: 4em !important;
+  padding: 1rem !important;
+}
+
+.navbar > .container, .navbar > .container-fluid {
+  justify-content: flex-end;
+}
+
+button.nav-links.btn.btn-link {
+  width: min-content;
+  height: 2em;
+  background-color: #8b0000;
+  border: 1px solid #000;
+}
+
+button.nav-links.btn.btn-link:hover {
+  filter: brightness(150%);
+}
+
+button.nav-links.btn.btn-link {
+  color: #00000080;
+  text-decoration: none;
+}
+
+.navbar-container {
+  text-align-last: right;
+}
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+  html {
+    background-color: #10032b;
+  }
+
+  .navbar-style .d-flex {
+    background-color: #789;
+    width: 100% !important;
+  }
+
+  .filter-search.form-control {
+    width: 5rem !important;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1440px) {
+  .nav-links {
+    font-size: 1rem !important;
+  }
+
+  .page-title {
+    font-size: 1.5em !important;
+  }
+
+  .filter-search.form-control {
+    width: 10rem !important;
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+  background-color: #10032b !important;
+  overflow: auto !important;
+}
+
+#app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+  background-color: #10032b !important;
+  overflow: auto !important;
+}
+
+#app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 
 /*# sourceMappingURL=index.3bb28fe2.css.map */

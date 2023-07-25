@@ -1,22 +1,24 @@
+@import '../../styles/base';
+
 $background: #10032b;
 $black: #000;
 $white: #fff;
-$blue: #007bff; 
+$blue: #007bff;
 $grey: lightslategray;
+$red: darkred;
+$gold: #b59507;
 
-
-.app-container {
-    height: 100%;
-    background-color: $background;
-}
 
 
 .page-title {
-    font-weight: 700;
-    font-size: 1.5rem !important;
+    font-weight: 400;
+    font-size: 2rem !important;
+    font-family: 'Rubik Glitch', cursive;
+    color: $red !important;
+    text-shadow: 2px 0 $black;
 }
 
-.nav-link{
+.nav-links {
     display: flex !important;
 }
 
@@ -29,9 +31,37 @@ $grey: lightslategray;
     padding-top: 10px;
 }
 
+/*
 .navbar-collapse {
     justify-content: flex-end !important;
+}*/
+
+/*
+.navbar-nav {
+    flex-flow: wrap;
+    justify-content: space-between;
 }
+*/
+button.navbar-toggler {
+    margin-left: 95%;
+}
+
+/* Styles for the collapsed navbar */
+.navbar-collapse.show {
+    .navbar-nav {
+        flex-flow: wrap;
+        justify-content: space-between;
+    }
+
+    button.navbar-toggler.collapsed {
+        margin-left: 95%;
+    }
+
+    input.filter-search.form-control {
+        margin-left: 25%;
+    }
+}
+
 
 .filter-search.form-control {
     width: 20rem !important;
@@ -60,11 +90,34 @@ nav {
     padding: 1rem !important;
     background-color: $grey !important;
     border-bottom: 1px solid white !important;
+    margin-bottom: 4em !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.navbar>.container,
+.navbar>.container-fluid {
+    justify-content: flex-end;
+}
+
+
+button.nav-links.btn.btn-link {
+    background-color: $red;
+    width: min-content;
+    border: 1px solid $black;
+    height: 2em;
+}
+
+button.nav-links.btn.btn-link:hover {
+    filter: brightness(150%);
+
 }
 
 button.nav-links.btn.btn-link {
     text-decoration: none;
-    color: rgba(0,0,0,.5);
+    color: rgba(0, 0, 0, .5);
 }
 
 .navbar-container {
@@ -75,11 +128,28 @@ button.nav-links.btn.btn-link {
     html {
         background-color: $background;
     }
-    .navbar-style .d-flex{
+
+    .navbar-style .d-flex {
         background-color: $grey;
         width: 100% !important;
     }
+
     .filter-search.form-control {
         width: 5rem !important;
     }
-  }
+}
+
+/* Media query for smaller screens */
+@media (min-width: 1000px) and (max-width: 1440px) {
+    .nav-links {
+        font-size: 1rem !important;
+    }
+
+    .page-title {
+        font-size: 1.5em !important;
+    }
+
+    .filter-search.form-control {
+        width: 10rem !important;
+    }
+}

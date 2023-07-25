@@ -75,14 +75,14 @@ export function RegistrationView(props) {
     }
 
     return (
-        <Container>
+        <Container className="registration-view">
             <Row>
                 <Col>
                     <CardGroup>
                         <Card>
                             <Card.Body>
                                 <Card.Title>Register now to view unlimited documentaries, anywhere, anytime.</Card.Title>
-                                <Form>
+                                <Form className="registration-form">
                                     <Form.Group controlId="formUsername">
                                         <Form.Label>Username:  </Form.Label>
                                         <Form.Control
@@ -131,7 +131,7 @@ export function RegistrationView(props) {
                                             placeholder="Enter a birthday"
                                         />
                                     </Form.Group>
-                                    <Button variant="primary" type="submit"
+                                    <Button className="submit-button" variant="primary" type="submit"
                                         onClick={handleRegister}>Submit</Button>
                                     <p></p>
                                     <p>Already registered? <Link to={'/'}>Sign in here</Link></p>

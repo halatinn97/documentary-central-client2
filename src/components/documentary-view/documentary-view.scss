@@ -1,25 +1,22 @@
+@import '../../styles/base';
+
 $background: #10032b;
 $black: #000;
 $white: #fff;
-$dark-grey: #3e434a; 
+$dark-grey: #3e434a;
 $grey: lightslategray;
 $red: #910a00;
+$gold: #b59507;
 
 
 
 
-.app-container {
-    height: 100%;
-    background-color: $background;
-}
 
-.main-view {
-    padding-top: 50px;
-
-}
-.add-favorites, .remove-favorites {
+.add-favorites,
+.remove-favorites {
     border-color: $black !important;
 }
+
 .add-favorites {
     background-color: $dark-grey !important;
 }

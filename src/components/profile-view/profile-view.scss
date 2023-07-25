@@ -1,26 +1,25 @@
+@import '../../styles/base';
+
 $background: #10032b;
 $black: #000;
 $white: #fff;
-$dark-grey: #3e434a; 
+$dark-grey: #ffffff;
 $grey: lightslategray;
 $red: #910a00;
-
-.main-view-style {
-    padding-top: 50px;
-}
+$gold: #b59507;
 
 
-.app-container {
-    height: 100vh;
-    background-color: $background;
-}
-
-
-.white-text, .form-label, .add-favorite-message {
+.white-text,
+.form-label,
+.add-favorite-message {
     color: $white;
 }
 
-
+.profile-view .documentary-card img {
+    width: 100%;
+    object-fit: fill;
+    height: 20em !important;
+}
 
 .update-button {
     margin-right: 5px;
@@ -48,12 +47,13 @@ $red: #910a00;
 .favorite-title {
     color: $white;
 }
- 
+
 .sub-title {
     font-weight: 300;
 }
 
-.update-button, .remove-button {
+.update-button,
+.remove-button {
     background-color: $dark-grey !important;
     border-color: $black !important;
 }
@@ -69,4 +69,34 @@ $red: #910a00;
 
 .favorite-title {
     text-align: center;
+}
+
+/* Styles for screens with width up to 1024px and height up to 1380px */
+@media (max-width: 1024px) and (max-height: 1380px) {
+    .profile-view .documentary-card img {
+        height: 12em !important;
+    }
+
+}
+
+/* Styles for screens with width between 1025px and 1440px, and height up to 1380px */
+@media (min-width: 1025px) and (max-width: 1440px) and (max-height: 1380px) {
+    .profile-view .documentary-card img {
+        height: 16em !important;
+    }
+
+}
+
+/* Styles for screens with width greater than 1440px, and height up to 1380px */
+@media (min-width: 1441px) and (max-height: 1380px) {
+    .profile-view .documentary-card img {
+        height: 16em !important;
+    }
+}
+
+/* Styles for screens with width greater than or equal to 2560px, and height up to 1380px */
+@media (min-width: 1600px) and (max-height: 1380px) {
+    .profile-view .documentary-card img {
+        height: 20em !important;
+    }
 }
