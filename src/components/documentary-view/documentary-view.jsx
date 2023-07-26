@@ -53,7 +53,7 @@ export class DocumentaryView extends React.Component {
 
         return (
             <Container className="documentary-view">
-                <Card className="documentary-view">
+                <Card className="documentary-viewCard">
                     <Card.Img
                         className="documentary-poster"
                         src={documentary.ImagePath}

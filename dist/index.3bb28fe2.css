@@ -127,6 +127,24 @@ body {
   display: grid;
 }
 
+.documentary-view {
+  justify-content: center;
+  display: flex;
+}
+
+img.card-img.documentary-poster {
+  height: 50em;
+}
+
+div.documentary-viewCard.card {
+  height: 50em;
+  width: 40em;
+}
+
+div.card-body {
+  background-color: #fff;
+}
+
 html, body {
   height: 100%;
   margin: 0;
@@ -231,13 +249,17 @@ body {
 }
 
 .update-button, .remove-button {
-  background-color: #fff !important;
+  background-color: #3e434a !important;
   border-color: #000 !important;
 }
 
 .delete-button {
   background-color: #910a00 !important;
   border-color: #000 !important;
+}
+
+.update-button:hover, .delete-button:hover, .remove-button:hover {
+  filter: brightness(120%);
 }
 
 .current-profile.card-body {

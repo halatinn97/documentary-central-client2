@@ -28,3 +28,21 @@ $gold: #b59507;
 .favorite-buttons {
     display: grid;
 }
+
+.documentary-view {
+    display: flex;
+    justify-content: center;
+}
+
+img.card-img.documentary-poster {
+    height: 50em;
+}
+
+div.documentary-viewCard.card {
+    height: 50em;
+    width: 40em;
+}
+
+div.card-body {
+    background-color: $white;
+}

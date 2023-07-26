@@ -48363,7 +48363,7 @@ class DocumentaryView extends _react.default.Component {
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(_reactBootstrap.Container, {
             className: "documentary-view",
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(_reactBootstrap.Card, {
-                className: "documentary-view",
+                className: "documentary-viewCard",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(_reactBootstrap.Card.Img, {
                         className: "documentary-poster",
